@@ -8,7 +8,7 @@ from ref_builder import create_ref_pages
 from readme_builder import create_readme_pages
 from license_builder import create_license_pages
 
-GIT_DIR = "~/docs/projects/coding/websites/cache/git.pi66.xyz/tmp/"
+GIT_DIR = "/srv/git/"
 
 repos = []
 
