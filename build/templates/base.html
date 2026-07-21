@@ -1,0 +1,16 @@
+{% include "partials/head.html" %}
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		{% include "partials/header.html" %}
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				{{ page_content }}
+			</main>
+
+			{% include "partials/footer.html" %}
+
+		</div>
+	</body>
+	{% include "partials/scripts.html" %}
+</html>

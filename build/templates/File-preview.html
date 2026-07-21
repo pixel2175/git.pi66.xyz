@@ -1,0 +1,11 @@
+{% set page_content %}
+
+{% include "partials/repo-nav.html" %}
+
+<h1>
+	{{file_name}}
+</h1>
+{{file_content}}
+{% endset %}
+
+{% include "base.html" %}

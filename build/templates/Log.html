@@ -1,0 +1,35 @@
+{% set page_content %}
+{% include "partials/repo-nav.html" %}
+<table class="!w-full">
+	<thead>
+		<tr><th>Date</th><th>Message</th><th>Author</th><th>Files</th><th>+</th><th>-</th></tr>
+	</thead>
+	<tbody>
+	{% for commit in commits  %}
+		<tr>
+			<td class="!text-gray-500 !w-40">{{commit.date}}</td>
+			<td>
+				<a class="!text-green-400 hover:underline" href="/{{repo_name|lower}}/commits/{{commit.commit_hash}}.html">
+					{{commit.message}}
+				</a>
+			</td>
+			<td class="!text-gray-400">
+				{{commit.author}}
+			</td>
+			<td class="!text-gray-500 text-right">
+				{{len(commit.files)}}
+			</td>
+			<td class="!text-green-500 text-right">
+				+{{total_added(commit.files)}}
+			</td>
+			<td class="!text-red-500 text-right">
+				-{{total_removed(commit.files)}}
+			</td>
+		</tr>
+
+	{% endfor %}
+	</tbody>
+</table>
+
+{% endset %}
+{% include "base.html" %}

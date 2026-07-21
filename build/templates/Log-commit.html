@@ -1,0 +1,40 @@
+{% set page_content %}
+{% include "partials/repo-nav.html" %}
+
+<p><a href="/{{repo_name}}/log.html">← back to log</a></p>
+<h1>{{commit_message}}</h1>
+
+
+<blockquote>
+	<p>
+		<strong>author:</strong> {{commit_author}} <br>
+		<strong>date:</strong>   {{commit_date}}   <br>
+		<strong>hash:</strong>   {{commit_hash}}   <br>
+	</p>
+</blockquote>
+
+
+<table class="!w-full !table-fixed !border-1 ">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>+</th>
+			<th>-</th>
+		</tr>
+	</thead>
+	<tbody>
+
+{% for file in changed_files  %}
+		<tr>
+			<td>{{file.name}}</td>
+			<td class="!text-green-500 text-right">{{file.added_lines}}</td>
+			<td class="!text-red-500 text-right">{{file.removed_lines}}</td>
+		</tr>
+{% endfor %}
+	</tbody>
+</table>
+
+{{ diff_content  }}
+
+{% endset %}
+{% include "base.html" %}

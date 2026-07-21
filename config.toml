@@ -1,0 +1,24 @@
+[project]
+name        = "git.pi66.xyz"
+version     = "0.1.0"
+description = "A web interface for the pi66.xyz Git server"
+
+[tree]
+markdown  = "md"
+static    = "build/static"
+templates = "build/templates"
+plugins   = "build/plugins"
+dest      = "/srv/www/git.pi66.xyz/public/html"
+
+[webview]
+host        = "localhost"
+port        = 8000
+dev_tools   = false
+html_path   = "/"
+static_path = "/static"
+
+[extras]
+highlight = "monokai"
+
+[cache]
+hash = ".hash.cache"

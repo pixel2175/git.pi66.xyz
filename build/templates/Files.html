@@ -1,0 +1,32 @@
+{% set page_content %}
+{% include "partials/repo-nav.html" %}
+
+<table class="!w-full">
+	<thead>
+		<tr><th>Mode</th><th>Size</th><th>Path</th>
+	</thead>
+		<tbody>
+
+		{% for file in files %}
+
+			<tr>
+				<td class="!text-gray-500 font-mono text-xs">
+					{{file.mode}}
+				</td>
+				<td class="!text-gray-400 text-right">
+					{{file.size}}
+				</td>
+				<td>
+					<a class="!text-green-400 hover:underline"
+					   href="/{{repo_name|lower}}/files/{{file.path}}.html" 
+					>
+						{{file.path}}
+					</a>
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+</table>
+
+{% endset %}
+{% include "base.html" %}
