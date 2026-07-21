@@ -50,11 +50,11 @@ def inject_repos(md_file, md_content):
 @hook("on_file_changed")
 def on_file_changed_hook(changed_path, config):
     if changed_path.startswith(config.tree.static):
-        subprocess.run(["rsync", "-a", "/srv/git/git.pi66.xyz/static/", "/srv/www/git.pi66.xyz/public/static/"])
+        subprocess.run(["rsync", "-a", "/srv/git/git.pi66.xyz/build/static/", "/srv/www/git.pi66.xyz/public/static/"])
 
 @hook("on_end")
 def sync_static():
-    subprocess.run(["rsync", "-a", "/srv/git/git.pi66.xyz/static/", "/srv/www/git.pi66.xyz/public/static/"])
+    subprocess.run(["rsync", "-a", "/srv/git/git.pi66.xyz/build/static/", "/srv/www/git.pi66.xyz/public/static/"])
 
 @hook("on_build_end")
 def build_pages(_):
