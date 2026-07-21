@@ -29,6 +29,8 @@ def _create_commit_page(api, repo_name, repo_desc, commit):
     html = api.jinja_handler(api.config, '{% extends "Log-commit.html" %}', plugins={
         "repo_name": repo_name,
         "repo_desc": repo_desc,
+        "page_title": f"Pi66 - {repo_name} - {commit.message}",
+        "metadata_content": repo_desc or "A web interface for the pi66.xyz Git server",
         "commit_date": commit.date,
         "commit_hash": commit.commit_hash,
         "commit_message": commit.message,
@@ -51,6 +53,8 @@ def create_log_pages(api, repos: list[Repo]):
             html = api.jinja_handler(api.config, '{% extends "Log.html" %}', plugins={
                 "repo_name": repo.name,
                 "repo_desc": repo.desc,
+                "page_title": f"Pi66 - {repo.name} - Log",
+                "metadata_content": repo.desc or "A web interface for the pi66.xyz Git server",
                 "commits": repo.commits,
                 "total_added": _total_added_lines,
                 "total_removed": _total_removed_lines,

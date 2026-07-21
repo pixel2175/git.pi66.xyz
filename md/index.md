@@ -1,3 +1,4 @@
+{% set page_title = "Pixel - Git" %}
 {% set page_content %}
 
 #  **Repositories** [.!text-center .!text-2xl]

@@ -11,6 +11,8 @@ def create_license_pages(api, repos: list[Repo]):
             html = api.jinja_handler(api.config, '{% extends "License.html" %}', plugins={
                 "repo_name": repo.name,
                 "repo_desc": repo.desc,
+                "page_title": f"Pi66 - {repo.name} - License",
+                "metadata_content": repo.desc or "A web interface for the pi66.xyz Git server",
                 "license_content": repo.license if repo.license else "No license file found.",
             })
 

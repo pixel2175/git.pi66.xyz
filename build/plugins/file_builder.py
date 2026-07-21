@@ -33,6 +33,8 @@ def _create_file_preview_page(api, repo_name, repo_desc, git_path, file):
     html = api.jinja_handler(api.config, '{% extends "File-preview.html" %}', plugins={
         "repo_name": repo_name,
         "repo_desc": repo_desc,
+        "page_title": f"Pi66 - {repo_name} - {file.path}",
+        "metadata_content": repo_desc or "A web interface for the pi66.xyz Git server",
         "file_name": file.path,
         "file_content": content,
     })
@@ -52,6 +54,8 @@ def create_file_pages(api, repos: list[Repo], git_dir):
             html = api.jinja_handler(api.config, '{% extends "Files.html" %}', plugins={
                 "repo_name": repo.name,
                 "repo_desc": repo.desc,
+                "page_title": f"Pi66 - {repo.name} - Files",
+                "metadata_content": repo.desc or "A web interface for the pi66.xyz Git server",
                 "files": repo.files,
             })
 
