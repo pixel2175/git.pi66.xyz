@@ -5,10 +5,12 @@ description = "A web interface for the pi66.xyz Git server"
 
 [tree]
 markdown  = "md"
-static    = "build/static"
-templates = "build/templates"
-plugins   = "build/plugins"
-dest      = "/srv/www/git.pi66.xyz/public/html"
+static    = "src/static"
+templates = "src/templates"
+plugins   = "src/plugins"
+
+draft_dest    = "draft"
+release_dest  = "/srv/www/git.pi66.xyz/public/html"
 
 [webview]
 host        = "localhost"
