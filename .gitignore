@@ -1,4 +1,4 @@
-dest/
+draft/
 .hash.cache
 **/__pycache__/
 config.toml
