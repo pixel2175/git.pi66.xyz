@@ -6,6 +6,7 @@ class ChangedFile:
     name: str
     added_lines: int
     removed_lines: int
+    status: str = "M"
 
 
 @dataclass

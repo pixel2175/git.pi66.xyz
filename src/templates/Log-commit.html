@@ -5,30 +5,24 @@
 <h1>{{commit_message}}</h1>
 
 
-<blockquote>
+<blockquote class="flex justify-between py-5">
 	<p>
 		<strong>author:</strong> {{commit_author}} <br>
 		<strong>date:</strong>   {{commit_date}}   <br>
 		<strong>hash:</strong>   {{commit_hash}}   <br>
 	</p>
+
 </blockquote>
 
-
-<table class="!w-full !table-fixed !border-1 ">
-	<thead>
-		<tr>
-			<th>File</th>
-			<th>+</th>
-			<th>-</th>
-		</tr>
-	</thead>
+<table class="diffstat ![direction:ltr] !w-full !table-fixed !border-0 px-6">
 	<tbody>
-
-{% for file in changed_files  %}
+{% for b in bars %}
 		<tr>
-			<td>{{file.name}}</td>
-			<td class="!text-green-500 text-right">{{file.added_lines}}</td>
-			<td class="!text-red-500 text-right">{{file.removed_lines}}</td>
+			<td class="!text-gray-400 flex gap-2.5"><p class="flex gap-2.5"><strong>{{b.file.status}}</strong></p>  {{b.file.name}}</td>
+			<td class="!text-right !text-gray-400">{{b.total}}</td>
+			<td>
+				<span class="!text-green-500">{{ "+" * b.add_width }}</span><span class="!text-red-500">{{ "-" * b.del_width }}</span>
+			</td>
 		</tr>
 {% endfor %}
 	</tbody>

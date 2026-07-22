@@ -171,6 +171,15 @@ def _load_refs(path: str) -> list[Ref]:
         Ref(name="tags", refs=_load_single_ref(path, "refs/tags")),
         Ref(name="remotes", refs=_load_single_ref(path, "refs/remotes")),
     ]
+def compute_bars(changed_files: list[ChangedFile], max_width: int = 30) -> list[dict]:
+    max_changes = max((f.added_lines + f.removed_lines for f in changed_files), default=1) or 1
+    bars = []
+    for f in changed_files:
+        total = f.added_lines + f.removed_lines
+        width = round((total / max_changes) * max_width) if total else 0
+        add_w = round(width * f.added_lines / total) if total else 0
+        bars.append({"file": f, "total": total, "add_width": add_w, "del_width": width - add_w})
+    return bars
 
 
 def _load_commits(path: str) -> list[Commit]:
@@ -179,6 +188,7 @@ def _load_commits(path: str) -> list[Commit]:
         "log",
         "--date=format:%Y-%m-%d %H:%M",
         "--numstat",
+        "--raw",
         "--no-merges",
         "--format=%x1e%H%x1f%an%x1f%ad%x1f%s",
     )
@@ -197,27 +207,29 @@ def _load_commits(path: str) -> list[Commit]:
             continue
 
         commit_hash, author, date, message = parts
+        statuses: dict[str, str] = {}
+        numstats: list[tuple[str, str, str]] = []
 
-        changed_files: list[ChangedFile] = []
         for line in lines[1:]:
-            file_parts = line.split("\t")
-            if len(file_parts) != 3:
-                continue
+            if line.startswith(":"):
+                raw_parts = line.split("\t")
+                meta = raw_parts[0].split()
+                if len(meta) >= 5 and len(raw_parts) >= 2:
+                    statuses[raw_parts[-1]] = meta[4][0]
+            else:
+                fields = line.split("\t")
+                if len(fields) == 3:
+                    numstats.append(tuple(fields))
 
-            added, removed, filename = file_parts
-            try:
-                added_int = int(added)
-            except ValueError:
-                added_int = 0
-
-            try:
-                removed_int = int(removed)
-            except ValueError:
-                removed_int = 0
-
-            changed_files.append(
-                ChangedFile(name=filename, added_lines=added_int, removed_lines=removed_int)
+        changed_files: list[ChangedFile] = [
+            ChangedFile(
+                name=filename,
+                added_lines=int(added) if added.isdigit() else 0,
+                removed_lines=int(removed) if removed.isdigit() else 0,
+                status=statuses.get(filename, "M"),
             )
+            for added, removed, filename in numstats
+        ]
 
         if not changed_files:
             continue

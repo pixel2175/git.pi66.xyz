@@ -1,6 +1,7 @@
 import os
 from models import Repo
 from dataclasses import asdict
+from git import compute_bars
 from progress import progress, progress_done
 
 
@@ -37,6 +38,7 @@ def _create_commit_page(api, repo_name, repo_desc, commit):
         "commit_author": commit.author,
         "changed_files": [asdict(f) for f in commit.files],
         "diff_content": patch_html,
+        "bars":compute_bars(commit.files),
     })
 
     api.save_html(html, dest)
