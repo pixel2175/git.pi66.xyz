@@ -14,7 +14,7 @@ def _total_added_lines(files):
 
 def _create_commit_page(api, repo_name, repo_desc, commit):
     dest = os.path.join(
-        api.config.tree.draft_dest,
+        api.config.tree.draft_dest if api.mode == "draft" else api.config.tree.release_dest,
         f"{repo_name.lower()}/commits/{commit.commit_hash}.html"
     )
 
