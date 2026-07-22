@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="pywal but if its Fast-Minimal-Simple">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - walrs - 1.0.4</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> walrs </strong>
+		
+			<br>
+			pywal but if its Fast-Minimal-Simple
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/walrs" > https://git.pi66.xyz/walrs </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/walrs/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/license.html">LICENSE</a>
+</nav>
+
+<p><a href="/walrs/log.html">← back to log</a></p>
+<h1>1.0.4</h1>
+
+
+<blockquote>
+	<p>
+		<strong>author:</strong> pixel <br>
+		<strong>date:</strong>   2025-04-04 19:38   <br>
+		<strong>hash:</strong>   177d6d805f68054f4112a90a4c030b96acd05424   <br>
+	</p>
+</blockquote>
+
+
+<table class="!w-full !table-fixed !border-1 ">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>+</th>
+			<th>-</th>
+		</tr>
+	</thead>
+	<tbody>
+
+
+		<tr>
+			<td>src/main.rs</td>
+			<td class="!text-green-500 text-right">19</td>
+			<td class="!text-red-500 text-right">9</td>
+		</tr>
+
+		<tr>
+			<td>src/reload.rs</td>
+			<td class="!text-green-500 text-right">5</td>
+			<td class="!text-red-500 text-right">5</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">87</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">diff --git a/src/main.rs b/src/main.rs</span>
+<span style="color: #F8F8F2">index d81c12b..2e2db4f 100644</span>
+<span style="color: #FF4689">--- a/src/main.rs</span>
+<span style="color: #A6E22E">+++ b/src/main.rs</span>
+<span style="color: #959077">@@ -20,7 +20,11 @@ struct Arg {</span>
+<span style="color: #F8F8F2"> </span>    #[arg(short = &#39;i&#39;)]
+<span style="color: #F8F8F2"> </span>    image: Option&lt;String&gt;,
+
+<span style="color: #FF4689">-    /// reload Templates from cache file</span>
+<span style="color: #A6E22E">+    /// reload Templates from cache file without set the wallpaper</span>
+<span style="color: #A6E22E">+    #[arg(short = &#39;r&#39;, action = ArgAction::SetTrue)]</span>
+<span style="color: #A6E22E">+    reload_nowal: bool,</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+    /// reload Templates from cache file and set the wallpaper</span>
+<span style="color: #F8F8F2"> </span>    #[arg(short = &#39;R&#39;, action = ArgAction::SetTrue)]
+<span style="color: #F8F8F2"> </span>    reload: bool,
+
+<span style="color: #959077">@@ -46,19 +50,25 @@ struct Arg {</span>
+<span style="color: #F8F8F2"> </span>fn main() {
+<span style="color: #F8F8F2"> </span>    let arg = Arg::parse();
+
+<span style="color: #FF4689">-    if !arg.reload &amp;&amp; arg.image.is_none() {</span>
+<span style="color: #FF4689">-        let mut cmd = Arg::command();</span>
+<span style="color: #FF4689">-        let _ = cmd.print_help();</span>
+<span style="color: #FF4689">-        </span>
+<span style="color: #FF4689">-        std::process::exit(1);</span>
+<span style="color: #FF4689">-    }</span>
+
+<span style="color: #A6E22E">+    if arg.reload_nowal {</span>
+<span style="color: #A6E22E">+        reload(!arg.quit,false);</span>
+<span style="color: #A6E22E">+        exit(0);</span>
+<span style="color: #A6E22E">+    }</span>
+
+<span style="color: #F8F8F2"> </span>    if arg.reload {
+<span style="color: #FF4689">-        reload(!arg.quit);</span>
+<span style="color: #A6E22E">+        reload(!arg.quit,true);</span>
+<span style="color: #F8F8F2"> </span>        exit(0);
+<span style="color: #F8F8F2"> </span>    }
+
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+    if arg.image.is_none() {</span>
+<span style="color: #A6E22E">+        let mut cmd = Arg::command();</span>
+<span style="color: #A6E22E">+        let _ = cmd.print_help();</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+        std::process::exit(1);</span>
+<span style="color: #A6E22E">+    }</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #F8F8F2"> </span>    let image_path = match arg.image {
+<span style="color: #F8F8F2"> </span>        Some(ref v) if Path::new(v).exists() =&gt; match get_absolute_path(v) {
+<span style="color: #F8F8F2"> </span>            Some(p) =&gt; p,
+<span style="color: #959077">@@ -83,7 +93,7 @@ fn main() {</span>
+<span style="color: #F8F8F2"> </span>    create_template(palette, &amp;image_path);
+<span style="color: #F8F8F2"> </span>    info(&quot;Template&quot;, &quot;create templates&quot;, !arg.quit);
+
+<span style="color: #FF4689">-    reload(!arg.quit);</span>
+<span style="color: #A6E22E">+    reload(!arg.quit,true);</span>
+
+<span style="color: #F8F8F2"> </span>    print_colors(!arg.quit);
+<span style="color: #F8F8F2"> </span>}
+<span style="color: #F8F8F2">diff --git a/src/reload.rs b/src/reload.rs</span>
+<span style="color: #F8F8F2">index bfbd8e5..b1e5c0a 100644</span>
+<span style="color: #FF4689">--- a/src/reload.rs</span>
+<span style="color: #A6E22E">+++ b/src/reload.rs</span>
+<span style="color: #959077">@@ -91,7 +91,7 @@ fn colors(colors:Vec&lt;String&gt;,send:bool){</span>
+<span style="color: #F8F8F2"> </span>    info(&quot;Terminal&quot;, &quot;terminal colorscheme set&quot;,send);
+<span style="color: #F8F8F2"> </span>}
+
+<span style="color: #FF4689">-pub fn reload(send:bool) {</span>
+<span style="color: #A6E22E">+pub fn reload(send:bool,set_wal:bool) {</span>
+<span style="color: #F8F8F2"> </span>    let cache = get_cache_folder().expect(&quot;Can&#39;t get cache path&quot;);
+<span style="color: #F8F8F2"> </span>    let file_path = format!(&quot;{}/wal/colors&quot;, cache);
+
+<span style="color: #959077">@@ -107,10 +107,10 @@ pub fn reload(send:bool) {</span>
+<span style="color: #F8F8F2"> </span>        None =&gt;  {warning(&quot;Path&quot;, &quot;can&#39;t found cache folder&quot;,send);exit(1)}
+<span style="color: #F8F8F2"> </span>    };
+
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-    let wallpaper = read_to_string(format!(&quot;{}/wal/wal&quot;,cache)).expect(&quot;run &#39;cp /etc/walrs/templates/wal ~/.config/walrs/templates/&#39; and restart app&quot;).lines().next().unwrap().trim().to_string();</span>
+<span style="color: #FF4689">-    wallpaper::change_wallpaper(wallpaper.as_str(),send);</span>
+<span style="color: #FF4689">-    </span>
+<span style="color: #A6E22E">+    if set_wal{</span>
+<span style="color: #A6E22E">+        let wallpaper = read_to_string(format!(&quot;{}/wal/wal&quot;,cache)).expect(&quot;run &#39;cp /etc/walrs/templates/wal ~/.config/walrs/templates/&#39; and restart app&quot;).lines().next().unwrap().trim().to_string();</span>
+<span style="color: #A6E22E">+        wallpaper::change_wallpaper(wallpaper.as_str(),send);</span>
+<span style="color: #A6E22E">+    }</span>
+<span style="color: #F8F8F2"> </span>    colors(lines,send);
+<span style="color: #F8F8F2"> </span>    xrdb(&amp;cache,send);
+<span style="color: #F8F8F2"> </span>    kitty(&amp;cache,send);
+</code></pre></div></td></tr></table></div>
+
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

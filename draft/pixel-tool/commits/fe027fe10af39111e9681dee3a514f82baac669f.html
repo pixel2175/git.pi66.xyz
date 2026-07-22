@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A web interface for the pi66.xyz Git server">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - pixel-tool - Add files via upload</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> pixel-tool </strong>
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/pixel-tool" > https://git.pi66.xyz/pixel-tool </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/pixel-tool/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/license.html">LICENSE</a>
+</nav>
+
+<p><a href="/pixel-tool/log.html">← back to log</a></p>
+<h1>Add files via upload</h1>
+
+
+<blockquote>
+	<p>
+		<strong>author:</strong> Pixel2175 <br>
+		<strong>date:</strong>   2024-08-22 10:34   <br>
+		<strong>hash:</strong>   fe027fe10af39111e9681dee3a514f82baac669f   <br>
+	</p>
+</blockquote>
+
+
+<table class="!w-full !table-fixed !border-1 ">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>+</th>
+			<th>-</th>
+		</tr>
+	</thead>
+	<tbody>
+
+
+		<tr>
+			<td>ui.py</td>
+			<td class="!text-green-500 text-right">49</td>
+			<td class="!text-red-500 text-right">58</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 91</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 92</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 93</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 94</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 95</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 96</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 97</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 98</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 99</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">100</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">101</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">102</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">103</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">104</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">105</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">106</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">107</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">108</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">109</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">110</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">111</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">112</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">113</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">114</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">115</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">116</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">117</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">118</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">119</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">120</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">121</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">122</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">123</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">124</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">125</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">126</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">127</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">128</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">129</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">130</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">131</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">132</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">133</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">134</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">135</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">136</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">137</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">138</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">139</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">140</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">141</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">142</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">143</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">144</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">145</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">146</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">147</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">148</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">149</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">150</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">151</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">152</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">153</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">154</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">155</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">156</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">157</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">158</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">159</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">160</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">161</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">162</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">163</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">164</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">165</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">166</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">167</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">168</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">169</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">170</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">171</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">172</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">173</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">174</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">175</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">176</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">177</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">178</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">179</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">180</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">181</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">182</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">183</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">184</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">185</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">186</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">187</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">188</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">189</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">190</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">191</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">192</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">193</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">194</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">195</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">196</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">197</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">198</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">199</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">200</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">201</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">202</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">203</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">204</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">205</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">206</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">207</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">208</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">209</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">210</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">211</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">212</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">213</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">214</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">215</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">216</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">217</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">218</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">219</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">220</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">221</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">222</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">223</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">224</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">225</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">226</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">227</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">228</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">229</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">230</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">231</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">232</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">233</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">234</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">235</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">236</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">237</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">238</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">239</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">240</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">241</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">242</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">243</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">244</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">245</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">246</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">247</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">248</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">249</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">250</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">251</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">252</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">253</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">254</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">255</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">256</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">257</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">258</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">259</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">260</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">261</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">262</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">diff --git a/ui.py b/ui.py</span>
+<span style="color: #F8F8F2">index c54fcb1..e72f312 100644</span>
+<span style="color: #FF4689">--- a/ui.py</span>
+<span style="color: #A6E22E">+++ b/ui.py</span>
+<span style="color: #959077">@@ -5,44 +5,25 @@ import webbrowser as web</span>
+<span style="color: #F8F8F2"> </span>import data
+<span style="color: #F8F8F2"> </span>import os
+<span style="color: #F8F8F2"> </span>import requests as req
+<span style="color: #FF4689">-import ctypes</span>
+<span style="color: #FF4689">-import sys</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-def is_admin():</span>
+<span style="color: #FF4689">-    try:</span>
+<span style="color: #FF4689">-        return ctypes.windll.shell32.IsUserAnAdmin()</span>
+<span style="color: #FF4689">-    except:</span>
+<span style="color: #FF4689">-        return False</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-if not is_admin():</span>
+<span style="color: #FF4689">-    ctypes.windll.shell32.ShellExecuteW(None, &quot;runas&quot;, sys.executable, __file__, None, 1)</span>
+<span style="color: #FF4689">-    sys.exit()</span>
+<span style="color: #A6E22E">+import json</span>
+<span style="color: #A6E22E">+from pathlib import Path</span>
+
+
+<span style="color: #F8F8F2"> </span>tk.set_appearance_mode(&#39;dark&#39;)
+<span style="color: #FF4689">-tk.set_default_color_theme(&#39;theme/purpel.json&#39;)</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-if os.path.exists(&#39;log.py&#39;):</span>
+<span style="color: #FF4689">-    import log</span>
+<span style="color: #FF4689">-else:</span>
+<span style="color: #FF4689">-    with open(&#39;log.py&#39;, &#39;w&#39;) as f:</span>
+<span style="color: #FF4689">-        f.write(&quot;tweaks=[]&quot;)</span>
+<span style="color: #FF4689">-    import log</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #A6E22E">+tk.set_default_color_theme(&#39;blue&#39;)</span>
+
+<span style="color: #F8F8F2"> </span>class Update(tk.CTkToplevel):
+<span style="color: #F8F8F2"> </span>    def __init__(self,main):
+<span style="color: #F8F8F2"> </span>        super().__init__(main)
+<span style="color: #F8F8F2"> </span>        self.title(&#39;Check Update&#39;)
+<span style="color: #F8F8F2"> </span>        self.geometry(&#39;275x350&#39;)
+<span style="color: #A6E22E">+        self.resizable(False, False)</span>
+
+<span style="color: #F8F8F2"> </span>        self.version=&#39;V1.4&#39;
+<span style="color: #FF4689">-        self.url=&#39;https://github.com/Pixel2175/pixel-tool/releases/tag/V1.6&#39;</span>
+<span style="color: #A6E22E">+        self.url=&#39;https://github.com/Pixel2175/pixel-tool/releases/tag/V1.7&#39;</span>
+
+<span style="color: #FF4689">-        self.uptodate_logo=ImageTk.PhotoImage(Image.open(&#39;images/update_done.png&#39;).resize((115,115)))</span>
+<span style="color: #FF4689">-        self.update_wait_logo=ImageTk.PhotoImage(Image.open(&#39;images/update_wait.png&#39;).resize((115,115)))</span>
+<span style="color: #A6E22E">+        self.uptodate_logo=ImageTk.PhotoImage(Image.open(Path(&#39;images/update_done.png&#39;)).resize((115,115)))</span>
+<span style="color: #A6E22E">+        self.update_wait_logo=ImageTk.PhotoImage(Image.open(Path(&#39;images/update_wait.png&#39;)).resize((115,115)))</span>
+
+<span style="color: #F8F8F2"> </span>        self.update_massage=tk.CTkLabel(self,text=&quot;Latest Version !!&quot;,font=tk.CTkFont(&#39;poppins&#39;,24,&#39;bold&#39;),text_color=&#39;#afafaf&#39;)
+<span style="color: #F8F8F2"> </span>        self.update_massage.place(x=45,y=180)
+<span style="color: #959077">@@ -74,24 +55,38 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>        self.geometry(&quot;901x490&quot;)
+<span style="color: #F8F8F2"> </span>        self.resizable(False,False)
+<span style="color: #F8F8F2"> </span>        self.title(&quot;Pixel Tool&quot;)
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+        self.json_path = &quot;C:\\Users\\vboxuser\\AppData\\Local\\&quot;</span>
+<span style="color: #A6E22E">+        self.json_file = f&quot;{self.json_path}log.json&quot;</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+        if not os.path.exists(self.json_file):</span>
+<span style="color: #A6E22E">+            with open(self.json_file,&#39;w&#39;) as f:</span>
+<span style="color: #A6E22E">+                f.write(&quot;{\n&quot; +&#39;    &quot;tweaks&quot;: [] &#39; +&quot;\n}&quot;)</span>
+<span style="color: #A6E22E">+                </span>
+<span style="color: #A6E22E">+                </span>
+<span style="color: #A6E22E">+        with open(self.json_file, &#39;r&#39;) as f:</span>
+<span style="color: #A6E22E">+            self.log_tweaks = json.load(f)[&quot;tweaks&quot;]</span>
+<span style="color: #A6E22E">+</span>
+
+<span style="color: #F8F8F2"> </span>        # Header
+<span style="color: #F8F8F2"> </span>        self.header=tk.CTkFrame(self,height=56,width=880,corner_radius=20)
+<span style="color: #F8F8F2"> </span>        self.header.pack(pady=11,padx=10,fill=&#39;y&#39;)
+<span style="color: #FF4689">-        self.logo=tk.CTkButton(self.header,text=&#39;&#39;,image=ImageTk.PhotoImage(Image.open(&#39;images/icon.png&#39;).resize((36,35))),height=35,width=35,fg_color=&quot;transparent&quot;,hover_color=&quot;#2c074f&quot;)</span>
+<span style="color: #A6E22E">+        self.logo=tk.CTkButton(self.header,text=&#39;&#39;,image=ImageTk.PhotoImage(Image.open(Path(&#39;images/icon.png&#39;)).resize((36,35))),height=35,width=35,fg_color=&quot;transparent&quot;,hover_color=&quot;#2c074f&quot;)</span>
+<span style="color: #F8F8F2"> </span>        self.logo.place(x=13,y=6)
+<span style="color: #F8F8F2"> </span>        self.titlee = tk.CTkLabel(self.header,text=&quot;PIXEL TOOL&quot;,font=tk.CTkFont(&#39;poppins&#39;,23,&quot;bold&quot;))
+<span style="color: #F8F8F2"> </span>        self.titlee.place(x=71,y=11)
+<span style="color: #F8F8F2"> </span>        self.github_logo = tk.CTkButton(self.header,
+<span style="color: #F8F8F2"> </span>                                        text=&quot;&quot;,
+<span style="color: #FF4689">-                                        image=ImageTk.PhotoImage(Image.open(&quot;images/github.png&quot;).resize((31,30))),</span>
+<span style="color: #A6E22E">+                                        image=ImageTk.PhotoImage(Image.open(Path(&quot;images/github.png&quot;)).resize((31,30))),</span>
+<span style="color: #F8F8F2"> </span>                                        height=31,width=30,
+<span style="color: #F8F8F2"> </span>                                        fg_color=&quot;transparent&quot;,hover_color=&quot;#2c074f&quot;,
+<span style="color: #F8F8F2"> </span>                                        command=self.github_link)
+<span style="color: #F8F8F2"> </span>        self.github_logo.place(x=771,y=9)
+<span style="color: #F8F8F2"> </span>        self.discord_logo= tk.CTkButton(self.header,
+<span style="color: #F8F8F2"> </span>                                        text=&quot;&quot;,
+<span style="color: #FF4689">-                                        image=ImageTk.PhotoImage(Image.open(&quot;images/discord.png&quot;).resize((31,30))),</span>
+<span style="color: #A6E22E">+                                        image=ImageTk.PhotoImage(Image.open(Path(&quot;images/discord.png&quot;)).resize((31,30))),</span>
+<span style="color: #F8F8F2"> </span>                                        height=31,width=30,
+<span style="color: #F8F8F2"> </span>                                        fg_color=&quot;transparent&quot;,hover_color=&quot;#2c074f&quot;,
+<span style="color: #F8F8F2"> </span>                                        command=self.discord_link)
+<span style="color: #959077">@@ -100,7 +95,7 @@ class Win(tk.CTk):</span>
+
+<span style="color: #F8F8F2"> </span>        self.update_logo=tk.CTkButton(self.header,
+<span style="color: #F8F8F2"> </span>                                      text=&#39;&#39;,
+<span style="color: #FF4689">-                                      image=ImageTk.PhotoImage(Image.open(&#39;images/update.png&#39;).resize((36,36))),</span>
+<span style="color: #A6E22E">+                                      image=ImageTk.PhotoImage(Image.open(Path(&#39;images/update.png&#39;)).resize((36,36))),</span>
+<span style="color: #F8F8F2"> </span>                                      height=36,width=36,
+<span style="color: #F8F8F2"> </span>                                      fg_color=&#39;transparent&#39;,hover_color=&#39;#2c074f&#39;,
+<span style="color: #F8F8F2"> </span>                                      command=self.check_update_btn)
+<span style="color: #959077">@@ -128,7 +123,7 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>                               width=0,
+<span style="color: #F8F8F2"> </span>                               bg_color=&quot;#2c074f&quot;,
+<span style="color: #F8F8F2"> </span>                               hover_color=&quot;#2c074f&quot;,fg_color=&quot;transparent&quot;,
+<span style="color: #FF4689">-                               image=ImageTk.PhotoImage(Image.open(&quot;images/tweak.png&quot;).resize((30,30))),</span>
+<span style="color: #A6E22E">+                               image=ImageTk.PhotoImage(Image.open(Path(&quot;images/tweak.png&quot;)).resize((30,30))),</span>
+<span style="color: #F8F8F2"> </span>                               text_color=&quot;#b4b4b4&quot;,font=self.menubuttons_font,
+<span style="color: #F8F8F2"> </span>                                command=self.tweak_btn)
+<span style="color: #F8F8F2"> </span>        self.tweak.place(x=23,y=95)
+<span style="color: #959077">@@ -138,7 +133,7 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>                               width=0,
+<span style="color: #F8F8F2"> </span>                               bg_color=&quot;#2c074f&quot;,
+<span style="color: #F8F8F2"> </span>                               hover_color=&quot;#2c074f&quot;,fg_color=&quot;transparent&quot;,
+<span style="color: #FF4689">-                               image=ImageTk.PhotoImage(Image.open(&quot;images/debloat.png&quot;).resize((30,30))),</span>
+<span style="color: #A6E22E">+                               image=ImageTk.PhotoImage(Image.open(Path(&quot;images/debloat.png&quot;)).resize((30,30))),</span>
+<span style="color: #F8F8F2"> </span>                               text_color=&quot;#b4b4b4&quot;,font=self.menubuttons_font,
+<span style="color: #F8F8F2"> </span>                               command=self.debloat_btn)
+<span style="color: #F8F8F2"> </span>        self.debloat.place(x=23,y=155)
+<span style="color: #959077">@@ -148,7 +143,7 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>                               width=0,
+<span style="color: #F8F8F2"> </span>                               bg_color=&quot;#2c074f&quot;,
+<span style="color: #F8F8F2"> </span>                               hover_color=&quot;#2c074f&quot;,fg_color=&quot;transparent&quot;,
+<span style="color: #FF4689">-                               image=ImageTk.PhotoImage(Image.open(&quot;images/toolbox.png&quot;).resize((33,33))),</span>
+<span style="color: #A6E22E">+                               image=ImageTk.PhotoImage(Image.open(Path(&quot;images/toolbox.png&quot;)).resize((33,33))),</span>
+<span style="color: #F8F8F2"> </span>                               text_color=&quot;#b4b4b4&quot;,font=self.menubuttons_font,
+<span style="color: #F8F8F2"> </span>                               command=self.tools_btn)
+<span style="color: #F8F8F2"> </span>        self.tools.place(x=23,y=215)
+<span style="color: #959077">@@ -156,7 +151,7 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>        self.interp=tk.CTkLabel(self.menu,text=&#39;&#39;,bg_color=&quot;#b4b4b4&quot;,width=3,height=32)
+<span style="color: #F8F8F2"> </span>        self.interp.place(x=20,y=36)
+
+<span style="color: #FF4689">-        self.rikka_icon=tk.CTkLabel(self.menu,text=&quot;&quot;,image=ImageTk.PhotoImage(Image.open(&quot;images/rikka.png&quot;).resize((136,128))))</span>
+<span style="color: #A6E22E">+        self.rikka_icon=tk.CTkLabel(self.menu,text=&quot;&quot;,image=ImageTk.PhotoImage(Image.open(Path(&quot;images/rikka.png&quot;)).resize((136,128))))</span>
+<span style="color: #F8F8F2"> </span>        self.rikka_icon.place(x=25,y=270)
+
+<span style="color: #F8F8F2"> </span>        self.main=tk.CTkFrame(self,corner_radius=21,height=3000)
+<span style="color: #959077">@@ -199,8 +194,7 @@ class Win(tk.CTk):</span>
+
+<span style="color: #F8F8F2"> </span>        self.bo_x=37 
+<span style="color: #F8F8F2"> </span>        self.bo_y=15 
+<span style="color: #FF4689">-        </span>
+<span style="color: #FF4689">-        </span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #F8F8F2"> </span>        for i in data.tweak_name:
+<span style="color: #F8F8F2"> </span>            btn=tk.CTkSwitch(self.tweak_btns_main,text=i,font=tk.CTkFont(&#39;poppins&#39;,14,&#39;normal&#39;))
+<span style="color: #F8F8F2"> </span>            btn.configure(command=lambda a=btn, b=i: self.bobo(a, b))
+<span style="color: #959077">@@ -212,12 +206,12 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>                self.bo_y+=30
+
+<span style="color: #F8F8F2"> </span>        self.next_btn_tweak=tk.CTkButton(self.tweak_main,text=&#39;&#39;,
+<span style="color: #FF4689">-                                         image=ImageTk.PhotoImage(Image.open(&#39;images/next.png&#39;).resize((36,48))),</span>
+<span style="color: #A6E22E">+                                         image=ImageTk.PhotoImage(Image.open(Path(&#39;images/next.png&#39;)).resize((36,48))),</span>
+<span style="color: #F8F8F2"> </span>                                         hover_color=&#39;#2c074f&#39;,fg_color=&#39;#2c074f&#39;,width=30,height=40,command=self.next_tweak)
+<span style="color: #F8F8F2"> </span>        self.next_btn_tweak.place(x=590,y=320)
+
+<span style="color: #F8F8F2"> </span>        self.back_btn_tweak=tk.CTkButton(self.tweak_main,text=&#39;&#39;,
+<span style="color: #FF4689">-                                         image=ImageTk.PhotoImage(Image.open(&#39;images/back.png&#39;).resize((36,48))),</span>
+<span style="color: #A6E22E">+                                         image=ImageTk.PhotoImage(Image.open(Path(&#39;images/back.png&#39;)).resize((36,48))),</span>
+<span style="color: #F8F8F2"> </span>                                         hover_color=&#39;#2c074f&#39;,fg_color=&quot;#2c074f&quot;,width=30,height=40,command=self.back_tweak)
+<span style="color: #F8F8F2"> </span>        self.back_btn_tweak.place(x=480,y=320)
+<span style="color: #F8F8F2"> </span>        self.tweak_page_num=tk.CTkLabel(self.tweak_main,text_color=&#39;#b4b4b4&#39;,text=&#39;1/5&#39;,font=tk.CTkFont(&#39;poppins&#39;,36,&#39;bold&#39;))
+<span style="color: #959077">@@ -226,10 +220,10 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>        self.btns_main=tk.CTkCanvas(self.debloat_main,width=1292,height=320,bg=&quot;#2c074f&quot;,highlightthickness=0)
+<span style="color: #F8F8F2"> </span>        self.btns_main.place(x=0,y=0)
+
+<span style="color: #FF4689">-        self.debloat_next_page=tk.CTkButton(self.debloat_main,image=ImageTk.PhotoImage(Image.open(&#39;images/next.png&#39;).resize((36,48))),fg_color=&#39;#2c074f&#39;,hover_color=&#39;#2c074f&#39;,width=30,height=40,text=&#39;&#39;,command=self.debloat_next_btn)</span>
+<span style="color: #A6E22E">+        self.debloat_next_page=tk.CTkButton(self.debloat_main,image=ImageTk.PhotoImage(Image.open(Path(&#39;images/next.png&#39;)).resize((36,48))),fg_color=&#39;#2c074f&#39;,hover_color=&#39;#2c074f&#39;,width=30,height=40,text=&#39;&#39;,command=self.debloat_next_btn)</span>
+<span style="color: #F8F8F2"> </span>        self.debloat_next_page.place(x=590,y=320)
+
+<span style="color: #FF4689">-        self.debloat_back_page=tk.CTkButton(self.debloat_main,image=ImageTk.PhotoImage(Image.open(&#39;images/back.png&#39;).resize((36,48))),fg_color=&#39;#2c074f&#39;,hover_color=&#39;#2c074f&#39;,width=30,height=40,text=&#39;&#39;,command=self.debloat_back_btn)</span>
+<span style="color: #A6E22E">+        self.debloat_back_page=tk.CTkButton(self.debloat_main,image=ImageTk.PhotoImage(Image.open(Path(&#39;images/back.png&#39;)).resize((36,48))),fg_color=&#39;#2c074f&#39;,hover_color=&#39;#2c074f&#39;,width=30,height=40,text=&#39;&#39;,command=self.debloat_back_btn)</span>
+<span style="color: #F8F8F2"> </span>        self.debloat_back_page.place(x=480,y=320)
+
+<span style="color: #F8F8F2"> </span>        self.debloat_page_num=tk.CTkLabel(self.debloat_main,text_color=&#39;#b4b4b4&#39;,text=&#39;1/2&#39;,font=tk.CTkFont(&#39;poppins&#39;,36,&#39;bold&#39;))
+<span style="color: #959077">@@ -265,14 +259,14 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>        self.entry_path=tk.CTkEntry(self.tools_main,width=300,textvariable=self.path,font=tk.CTkFont(&#39;poppins&#39;,13,&#39;normal&#39;))
+<span style="color: #F8F8F2"> </span>        self.entry_path.place(x=20,y=337)
+
+<span style="color: #FF4689">-        self.open_dialog_btn=tk.CTkButton(self.tools_main,text=&quot;Open&quot;,image=ImageTk.PhotoImage(Image.open(&#39;images/open.png&#39;).resize((20,20))),font=tk.CTkFont(&#39;poppins&#39;,18,&#39;normal&#39;),width=110,command=self.open_dialog)</span>
+<span style="color: #A6E22E">+        self.open_dialog_btn=tk.CTkButton(self.tools_main,text=&quot;Open&quot;,image=ImageTk.PhotoImage(Image.open(Path(&#39;images/open.png&#39;)).resize((20,20))),font=tk.CTkFont(&#39;poppins&#39;,18,&#39;normal&#39;),width=110,command=self.open_dialog)</span>
+<span style="color: #F8F8F2"> </span>        self.open_dialog_btn.place(x=330,y=335)
+
+<span style="color: #F8F8F2"> </span>        self.app_station=tk.CTkLabel(self.tools_main,text=&#39;&#39;,font=tk.CTkFont(&#39;poppins&#39;,20,&#39;bold&#39;))
+<span style="color: #F8F8F2"> </span>        self.app_station.place(x=15,y=300)
+
+
+<span style="color: #FF4689">-        self.download_btn=tk.CTkButton(self.tools_main,text=&#39;Download&#39;,image=ImageTk.PhotoImage(Image.open(&#39;images/download.png&#39;).resize((20,20))),font=tk.CTkFont(&#39;poppins&#39;,18,&#39;normal&#39;),command=self.download_apps)</span>
+<span style="color: #A6E22E">+        self.download_btn=tk.CTkButton(self.tools_main,text=&#39;Download&#39;,image=ImageTk.PhotoImage(Image.open(Path(&#39;images/download.png&#39;)).resize((20,20))),font=tk.CTkFont(&#39;poppins&#39;,18,&#39;normal&#39;),command=self.download_apps)</span>
+<span style="color: #F8F8F2"> </span>        self.download_btn.place(x=455,y=335)
+
+
+<span style="color: #959077">@@ -288,11 +282,6 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>            else:
+<span style="color: #F8F8F2"> </span>                self.btn_y+=40 
+
+<span style="color: #FF4689">-    def tweak_btn_checker(self):</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-        btns = self.tweak_btns_main.winfo_children()</span>
+<span style="color: #FF4689">-        for tweak in log.tweaks:</span>
+<span style="color: #FF4689">-            btns[tweak].select()</span>
+
+
+<span style="color: #F8F8F2"> </span>    def next_tweak(self):
+<span style="color: #959077">@@ -351,7 +340,6 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>            data.download_selected.append(index)
+<span style="color: #F8F8F2"> </span>        else:
+<span style="color: #F8F8F2"> </span>            data.download_selected.remove(index)
+<span style="color: #FF4689">-        print(data.download_selected)</span>
+
+
+<span style="color: #F8F8F2"> </span>    def how_to_restore(self):
+<span style="color: #959077">@@ -408,22 +396,25 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>            self.btns_main.place(x=0)
+<span style="color: #F8F8F2"> </span>            self.debloat_page_num.configure(text=&#39;1/2&#39;)
+
+<span style="color: #FF4689">-</span>
+<span style="color: #A6E22E">+    def tweaks_checker(self):</span>
+<span style="color: #A6E22E">+        btns = self.tweak_btns_main.winfo_children()</span>
+<span style="color: #A6E22E">+        for tweak in self.log_tweaks:</span>
+<span style="color: #A6E22E">+            btns[tweak].select()</span>
+<span style="color: #A6E22E">+   </span>
+<span style="color: #F8F8F2"> </span>    def bobo(self,btn,var):
+<span style="color: #F8F8F2"> </span>        index=data.tweak_name.index(var)
+<span style="color: #FF4689">-        log_file = log.tweaks</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #F8F8F2"> </span>        if btn.get():
+<span style="color: #FF4689">-            log_file.append(index)</span>
+<span style="color: #FF4689">-            with open(&quot;log.py&quot;, &#39;w&#39;) as f:</span>
+<span style="color: #FF4689">-                f.write(f&quot;tweaks={log_file}&quot;)</span>
+<span style="color: #A6E22E">+            self.log_tweaks.append(index)</span>
+<span style="color: #F8F8F2"> </span>            data.on_value[index]()
+<span style="color: #F8F8F2"> </span>        else:
+<span style="color: #FF4689">-            log_file.remove(index)</span>
+<span style="color: #FF4689">-            with open(&quot;log.py&quot;, &#39;w&#39;) as f:</span>
+<span style="color: #FF4689">-                f.write(f&quot;tweaks={log_file}&quot;)</span>
+<span style="color: #A6E22E">+            self.log_tweaks.remove(index)</span>
+<span style="color: #F8F8F2"> </span>            data.off_value[index]()
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        with open(self.json_file,&#39;w&#39;) as f:</span>
+<span style="color: #A6E22E">+            f.write(&quot;{\n&quot;+ &#39;    &quot;tweaks&quot;: &#39; f&quot;{self.log_tweaks}&quot; + &quot;\n}&quot;) </span>
+
+<span style="color: #FF4689">-</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #F8F8F2"> </span>    def interp_changer(self,my_y):
+<span style="color: #F8F8F2"> </span>        if self.interp.winfo_y() &gt; my_y: 
+<span style="color: #F8F8F2"> </span>            self.interp.place(y=self.interp.winfo_y() - 1)
+<span style="color: #959077">@@ -440,7 +431,7 @@ class Win(tk.CTk):</span>
+<span style="color: #F8F8F2"> </span>        self.tools_main.place_forget()
+
+<span style="color: #F8F8F2"> </span>    def tweak_btn(self):
+<span style="color: #FF4689">-        self.tweak_btn_checker()</span>
+<span style="color: #A6E22E">+        self.tweaks_checker()</span>
+<span style="color: #F8F8F2"> </span>        self.interp_changer(95)
+<span style="color: #F8F8F2"> </span>        self.tweak_main.place(x=7,y=7)
+<span style="color: #F8F8F2"> </span>        self.home_main.place_forget() 
+</code></pre></div></td></tr></table></div>
+
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

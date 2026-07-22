@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="pywal but if its Fast-Minimal-Simple">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - walrs - colorschemes/dark/base16-atelier-cave</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> walrs </strong>
+		
+			<br>
+			pywal but if its Fast-Minimal-Simple
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/walrs" > https://git.pi66.xyz/walrs </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/walrs/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/license.html">LICENSE</a>
+</nav>
+
+<h1>
+	colorschemes/dark/base16-atelier-cave
+</h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>#19171c
+#be4678
+#2a9292
+#a06e3b
+#576ddb
+#955ae7
+#398bc6
+#8b8792
+#655f6d
+#be4678
+#2a9292
+#a06e3b
+#576ddb
+#955ae7
+#398bc6
+#efecf4
+</code></pre></div></td></tr></table></div>
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A web interface for the pi66.xyz Git server">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - pi66.xyz - md/tools/merodi.md</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> pi66.xyz </strong>
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/pi66.xyz" > https://git.pi66.xyz/pi66.xyz </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/pi66.xyz/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/license.html">LICENSE</a>
+</nav>
+
+<h1>
+	md/tools/merodi.md
+</h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>{% extends &quot;layout.html&quot; %}
+{% block title %}Merodi{% endblock %}
+
+{% block meta_description %}
+A markdown-based static site generator built with Python. Write pages in markdown, style them with Jinja2 templates, and get a ready-to-publish website.
+{% endblock %}
+
+{% block content %}
+
+<span style="color: #F8F8F2"># &gt;[**Merodi**](/tools/merodi)</span>
+
+<span style="color: #F8F8F2; font-weight: bold">**Merodi**</span> is a markdown-based static site generator written in Python. Write pages in Markdown, style them with Jinja2 templates, and get a ready-to-publish website — with live preview via a watcher or a native webview window.
+
+<span style="color: #F8F8F2"># &gt;**Install**</span>
+
+```bash
+pip install .
+<span style="color: #F8F8F2"># or using pipx</span>
+pipx install .
+</code></pre></div></td></tr></table></div>
+<p>Requires <strong>Python ≥ 3.11</strong>. Dependencies: <code>markdown</code>, <code>jinja2</code>, <code>pywebview</code>, <code>watchdog</code>, <code>PyGObject</code>, <code>pymdown-extensions</code>, <code>latex2mathml</code>, <code>pygments</code>.</p>
+<h1>&gt;<strong>Quick start</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>merodi<span style="color: #F8F8F2"> </span>init<span style="color: #F8F8F2"> </span>my-site
+<span style="color: #F8F8F2">cd </span>my-site
+merodi<span style="color: #F8F8F2"> </span>build
+</code></pre></div></td></tr></table></div>
+<p>Open <code>src/dest/index.html</code>, or run <code>merodi webview</code> for a live preview window, or <code>merodi watch</code> to rebuild on file changes without opening a window.</p>
+<h1>&gt;<strong>Project structure</strong></h1>
+<p><code>merodi init</code> scaffolds:</p>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>my-site/
+  config.toml
+  src/
+    md/
+      index.md
+    templates/
+      layout.html
+    static/
+      style.css
+    plugins.py
+    dest/
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>src/md/index.md</code> — default page, a single Jinja <code>content</code> block with <code># Hello, Alice</code></li>
+<li><code>src/templates/layout.html</code> — base HTML layout with a <code>title</code> block, a <code>content</code> block, and a <code>style_css</code> variable wired to the stylesheet</li>
+<li><code>src/static/style.css</code> — minimal default styling</li>
+<li><code>src/plugins.py</code> — Python functions exposed to templates (see below)</li>
+<li><code>src/dest/</code> — build output directory</li>
+</ul>
+<h1>&gt;<strong>Commands</strong></h1>
+<h1>&gt;<strong>merodi init [path]</strong></h1>
+<p>Creates <code>config.toml</code> and the default project tree shown above. Fails if <code>config.toml</code> already exists at the target path.</p>
+<h1>&gt;<strong>merodi build [path]</strong></h1>
+<p>Builds every markdown file under <code>tree.markdown</code> into HTML files under <code>tree.dest</code>, preserving the relative folder structure.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--file SRC DEST</code></td>
+<td>Build a single markdown file directly to a destination path (cannot be combined with a project path)</td>
+</tr>
+<tr>
+<td><code>--release</code> / <code>--debug</code></td>
+<td>Build mode flag (currently reserved for future use)</td>
+</tr>
+</tbody>
+</table>
+<h1>&gt;<strong>merodi watch [path]</strong></h1>
+<p>Watches <code>markdown</code>, <code>templates</code>, <code>static</code>, and the <code>plugins.py</code> file for changes and rebuilds the affected page automatically. This runs headless (no window) — useful for pairing with your own dev server or editor live-reload setup. Changes are debounced (~0.3s) to avoid duplicate rebuilds from rapid file-system events.</p>
+<h1>&gt;<strong>merodi webview [path]</strong></h1>
+<p>Starts a local HTTP server (serving <code>dest</code> at <code>html_path</code> and <code>static</code> at <code>static_path</code>), opens a native GUI window pointed at it, and watches files the same way <code>watch</code> does — reloading the window automatically when markdown, templates, static assets, or plugins change.</p>
+<h1>&gt;<strong>Global flags</strong></h1>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--verbose</code></td>
+<td>Show detailed error information (also via <code>VERBOSE=true</code>)</td>
+</tr>
+<tr>
+<td><code>--no-color</code></td>
+<td>Disable colored terminal output (also via <code>NO_COLOR=true</code>)</td>
+</tr>
+</tbody>
+</table>
+<h1>&gt;<strong>How a build works</strong></h1>
+<p>For each markdown file, Merodi:</p>
+<ol>
+<li><strong>Escapes fenced/inline code blocks</strong> by wrapping them in Jinja <code>{% raw %}...{% endraw %}</code> so any <code>{{ }}</code>/<code>{% %}</code>-looking text inside code isn't treated as a template expression.</li>
+<li><strong>Renders math</strong> — any <code>&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;</code> (inline) or <code>&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;</code> (block) segments are converted to MathML via <code>latex2mathml</code>.</li>
+<li><strong>Converts Markdown to HTML</strong> using Python-Markdown with the <code>extra</code> and <code>md_in_html</code> extensions plus a set of <code>pymdown-extensions</code> (better emphasis, critic markup, details/summary, syntax highlighting, inline code highlighting, keyboard keys, mark/highlight, superfences, tabbed content, and strikethrough).</li>
+<li><strong>Filters stray Jinja artifacts</strong> left behind by the markdown renderer (e.g. <code>&lt;p&gt;</code> tags wrapped around <code>{% %}</code> block tags) and strips leftover attribute-list brackets after Jinja expressions.</li>
+<li><strong>Renders the result through Jinja2</strong>, using your <code>templates/</code> directory as the loader root, with every function from <code>plugins.py</code> injected as a template global.</li>
+<li><strong>Writes the final HTML</strong> to the corresponding path under <code>dest</code>, creating directories as needed.</li>
+</ol>
+<p>If a build step raises an error, Merodi prints an <code>[ERROR]</code>/<code>[WARN]</code> line to the terminal; in <code>webview</code>/<code>watch</code> mode, a styled error page (dark background, red header, offending source line highlighted) is shown in the browser/window instead of crashing the process.</p>
+<h1>&gt;<strong>Markdown features</strong></h1>
+<ul>
+<li><strong>Standard extras</strong> — tables, footnotes, definition lists, fenced code blocks, abbreviations, attribute lists, and more (via Python-Markdown's <code>extra</code>)</li>
+<li><strong>Math</strong> — LaTeX math rendered as MathML (<code>&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;</code> inline, <code>&lt;math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"&gt;&lt;mrow&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;/mrow&gt;&lt;/math&gt;</code> block)</li>
+<li><strong>Syntax highlighting</strong> — Pygments-based, style configurable via <code>config.toml</code></li>
+<li><strong>Inline highlights</strong> — <code>==highlighted text==</code></li>
+<li><strong>Strikethrough</strong> — <code>~~strikethrough~~</code></li>
+<li><strong>Better emphasis</strong> — smarter handling of <code>*</code> and <code>_</code></li>
+<li><strong>Magic links</strong> — bare URLs auto-link without extra syntax</li>
+<li><strong>Keyboard keys</strong> — <code><ins class="critic">Ctrl+Alt+Del</ins></code> renders styled <code>&lt;kbd&gt;</code> elements</li>
+<li><strong>Details/summary</strong> — collapsible <code>&lt;details&gt;</code> blocks</li>
+<li><strong>Tabbed content</strong> — tabbed code blocks and sections</li>
+<li><strong>Critic markup</strong> — track suggested edits with <code><del class="critic">delete</del></code> and <code><ins class="critic">add</ins></code></li>
+<li><strong>Attribute lists</strong> — Merodi patches this extension to use <code>[.class]</code> / <code>[:#id]</code> instead of the default <code>{.class}</code> / <code>{:#id}</code> syntax</li>
+</ul>
+<h1>&gt;<strong>Templates</strong></h1>
+<p>Pages are rendered with <strong>Jinja2</strong>. Templates live in <code>src/templates/</code> (path configurable via <code>[tree] templates</code>). Your layout can use any standard Jinja2 block/include/extends behavior.</p>
+<h1>&gt;<strong>Plugin functions in templates</strong></h1>
+<p>Any public function (no leading underscore) defined in <code>src/plugins.py</code> is automatically exposed as a template global:</p>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #959077">{{</span> <span style="color: #F8F8F2">fetch</span><span style="color: #FF4689">(</span><span style="color: #E6DB74">&quot;https://api.example.com/data&quot;</span><span style="color: #FF4689">,</span> <span style="color: #F8F8F2">type</span><span style="color: #FF4689">=</span><span style="color: #E6DB74">&quot;json&quot;</span><span style="color: #FF4689">)</span> <span style="color: #959077">}}</span>
+<span style="color: #959077">{{</span> <span style="color: #F8F8F2">read</span><span style="color: #FF4689">(</span><span style="color: #E6DB74">&quot;src/data/content.txt&quot;</span><span style="color: #FF4689">)</span> <span style="color: #959077">}}</span>
+</code></pre></div></td></tr></table></div>
+<p>The default <code>plugins.py</code> ships two functions:</p>
+<ul>
+<li><strong><code>fetch(url, type="text")</code></strong> — performs an HTTP GET; returns parsed JSON if <code>type="json"</code>, otherwise raw text (trailing newline stripped). Raises if the response status isn't 200.</li>
+<li><strong><code>read(file)</code></strong> — reads a local file's contents as text (trailing newline stripped).</li>
+</ul>
+<p>Add your own functions to <code>plugins.py</code> and they'll be available the same way — no registration step needed.</p>
+<h1>&gt;<strong>Configuration</strong></h1>
+<p>Project settings live in <code>config.toml</code>, at the project root:</p>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">[project]</span>
+<span style="color: #F8F8F2">name        </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;my-site&quot;</span>
+<span style="color: #F8F8F2">version     </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;0.1.0&quot;</span>
+<span style="color: #F8F8F2">description </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;Add your description here&quot;</span>
+
+<span style="color: #66D9EF">[tree]</span>
+<span style="color: #F8F8F2">markdown  </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;src/md&quot;</span>
+<span style="color: #F8F8F2">static    </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;src/static&quot;</span>
+<span style="color: #F8F8F2">templates </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;src/templates&quot;</span>
+<span style="color: #F8F8F2">dest      </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;src/dest&quot;</span>
+<span style="color: #F8F8F2">plugins   </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;src/plugins.py&quot;</span>
+
+<span style="color: #66D9EF">[webview]</span>
+<span style="color: #F8F8F2">host        </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;localhost&quot;</span>
+<span style="color: #F8F8F2">port        </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #AE81FF">8866</span>
+<span style="color: #F8F8F2">dev_tools   </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">false</span>
+<span style="color: #F8F8F2">html_path   </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;/&quot;</span>
+<span style="color: #F8F8F2">static_path </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;/static&quot;</span>
+
+<span style="color: #66D9EF">[extras]</span>
+<span style="color: #F8F8F2">highlight </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;monokai&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>[project]</strong></h1>
+<p>Metadata only — name, version, description. Not currently used to alter build behavior.</p>
+<h1>&gt;<strong>[tree]</strong></h1>
+<p>Paths (relative to the project root) for where Merodi looks for input and writes output. All five must exist (except <code>dest</code>, which is created automatically if missing) or the build fails with a <code>FileNotFoundError</code>.</p>
+<h1>&gt;<strong>[webview]</strong></h1>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td><code>"localhost"</code></td>
+<td>Host the local HTTP server binds to</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>8866</code></td>
+<td>Port the local HTTP server binds to</td>
+</tr>
+<tr>
+<td><code>dev_tools</code></td>
+<td><code>false</code></td>
+<td>Enables pywebview's debug mode / dev tools when running <code>webview</code></td>
+</tr>
+<tr>
+<td><code>html_path</code></td>
+<td><code>"/"</code></td>
+<td>URL prefix that serves built HTML from <code>dest</code></td>
+</tr>
+<tr>
+<td><code>static_path</code></td>
+<td><code>"/static"</code></td>
+<td>URL prefix that serves files from <code>static</code></td>
+</tr>
+</tbody>
+</table>
+<h1>&gt;<strong>[extras]</strong></h1>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>highlight</code></td>
+<td><code>"monokai"</code></td>
+<td>Pygments style name for syntax highlighting. Set to <code>"noclasses"</code> to emit CSS classes (for external stylesheets) instead of inline styles.</td>
+</tr>
+</tbody>
+</table>
+<h1>&gt;<strong>Architecture (source layout)</strong></h1>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.py</code></td>
+<td>CLI entry point — argument parsing and command dispatch (<code>init</code>, <code>build</code>, <code>watch</code>, <code>webview</code>)</td>
+</tr>
+<tr>
+<td><code>init_project.py</code></td>
+<td>Scaffolds a new project: writes <code>config.toml</code> and default md/template/CSS/plugin files</td>
+</tr>
+<tr>
+<td><code>build.py</code></td>
+<td>Core markdown → HTML pipeline (code-escaping, math, Markdown extensions, Jinja rendering, plugin loading)</td>
+</tr>
+<tr>
+<td><code>watcher.py</code></td>
+<td>File-system watcher (via <code>watchdog</code>) that triggers incremental rebuilds</td>
+</tr>
+<tr>
+<td><code>webviewer.py</code></td>
+<td>Local HTTP server + native window (via <code>pywebview</code>) with live reload</td>
+</tr>
+<tr>
+<td><code>config.py</code></td>
+<td>Loads/parses <code>config.toml</code> into typed config objects; generates default config content</td>
+</tr>
+<tr>
+<td><code>modules.py</code></td>
+<td>Dataclasses for <code>Project</code>, <code>Tree</code>, <code>Webview</code>, <code>Extras</code>, and the top-level <code>Config</code></td>
+</tr>
+<tr>
+<td><code>fileops.py</code></td>
+<td>Small file read/write helpers and tree-directory creation</td>
+</tr>
+<tr>
+<td><code>templates.py</code></td>
+<td>Default file contents written by <code>merodi init</code> (markdown, layout, CSS, plugins)</td>
+</tr>
+<tr>
+<td><code>errors.py</code></td>
+<td>Error formatting — terminal output and the in-browser styled error page</td>
+</tr>
+<tr>
+<td><code>log.py</code></td>
+<td>Colored <code>[INFO]</code> / <code>[WARN]</code> / <code>[ERROR]</code> console logging, toggled by <code>--no-color</code></td>
+</tr>
+<tr>
+<td><code>settings.py</code></td>
+<td>Global <code>VERBOSE</code> / <code>NO_COLOR</code> flags set from CLI args or environment variables</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Merodi is under active development (currently v0.2.0). The <code>--release</code>/<code>--debug</code> build flags are parsed but not yet acted upon.
+{% endblock %}
+```</p>
+</blockquote>
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

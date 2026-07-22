@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="minimal & simple status monitoring app.">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - sta - fix: crashes and improve logging</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> sta </strong>
+		
+			<br>
+			minimal & simple status monitoring app.
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/sta" > https://git.pi66.xyz/sta </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/sta/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/sta/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/sta/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/sta/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/sta/license.html">LICENSE</a>
+</nav>
+
+<p><a href="/sta/log.html">← back to log</a></p>
+<h1>fix: crashes and improve logging</h1>
+
+
+<blockquote>
+	<p>
+		<strong>author:</strong> pi66 <br>
+		<strong>date:</strong>   2026-04-28 22:33   <br>
+		<strong>hash:</strong>   b587ef7ca41dab0a19410e5493842818a1bdfffe   <br>
+	</p>
+</blockquote>
+
+
+<table class="!w-full !table-fixed !border-1 ">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>+</th>
+			<th>-</th>
+		</tr>
+	</thead>
+	<tbody>
+
+
+		<tr>
+			<td>.gitignore</td>
+			<td class="!text-green-500 text-right">1</td>
+			<td class="!text-red-500 text-right">0</td>
+		</tr>
+
+		<tr>
+			<td>sta.c</td>
+			<td class="!text-green-500 text-right">9</td>
+			<td class="!text-red-500 text-right">21</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">91</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">diff --git a/.gitignore b/.gitignore</span>
+new file mode 100644
+<span style="color: #F8F8F2">index 0000000..0e56cf2</span>
+<span style="color: #FF4689">--- /dev/null</span>
+<span style="color: #A6E22E">+++ b/.gitignore</span>
+<span style="color: #959077">@@ -0,0 +1 @@</span>
+<span style="color: #A6E22E">+config.h</span>
+<span style="color: #F8F8F2">diff --git a/sta.c b/sta.c</span>
+<span style="color: #F8F8F2">index a69c75d..ea7b2cd 100644</span>
+<span style="color: #FF4689">--- a/sta.c</span>
+<span style="color: #A6E22E">+++ b/sta.c</span>
+<span style="color: #959077">@@ -58,7 +58,7 @@ void add_pro(Pros *list, int id, char *name)</span>
+<span style="color: #F8F8F2"> </span>   list-&gt;count++;
+<span style="color: #F8F8F2"> </span>   list-&gt;process = realloc(list-&gt;process, sizeof(Pro) * list-&gt;count);
+<span style="color: #F8F8F2"> </span>   if (!list-&gt;process) {
+<span style="color: #FF4689">-       warn(&quot;Memory&quot;, &quot;memory allocation failed.&quot;);</span>
+<span style="color: #A6E22E">+       warn(&quot;Memory: memory allocation failed.&quot;);</span>
+<span style="color: #F8F8F2"> </span>       exit(1);
+<span style="color: #F8F8F2"> </span>   }
+<span style="color: #F8F8F2"> </span>   list-&gt;process[list-&gt;count - 1].name = strdup(name);
+<span style="color: #959077">@@ -108,13 +108,6 @@ void append(Args *command, Pros *list)</span>
+<span style="color: #F8F8F2"> </span>   show_pros(list);
+<span style="color: #F8F8F2"> </span>}
+
+<span style="color: #FF4689">-void clean_up(int s)</span>
+<span style="color: #FF4689">-{</span>
+<span style="color: #FF4689">-   (void)s;</span>
+<span style="color: #FF4689">-   unlink(SOCKET_PATH);</span>
+<span style="color: #FF4689">-   exit(0);</span>
+<span style="color: #FF4689">-}</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #F8F8F2"> </span>void *worker(void *arg)
+<span style="color: #F8F8F2"> </span>{
+<span style="color: #F8F8F2"> </span>   Potato *data = arg;
+<span style="color: #959077">@@ -130,10 +123,6 @@ void *worker(void *arg)</span>
+
+<span style="color: #F8F8F2"> </span>void run_server(struct sockaddr_un *addr, int sock, Pros *list)
+<span style="color: #F8F8F2"> </span>{
+<span style="color: #FF4689">-   signal(SIGTERM, clean_up);</span>
+<span style="color: #FF4689">-   signal(SIGINT, clean_up);</span>
+<span style="color: #FF4689">-   unlink(SOCKET_PATH);</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #F8F8F2"> </span>   int cmds = sizeof(commands) / sizeof(commands[0]);
+<span style="color: #F8F8F2"> </span>   pthread_t tids[cmds];
+<span style="color: #F8F8F2"> </span>   for (int i = 0; i &lt; cmds; ++i) {
+<span style="color: #959077">@@ -148,10 +137,10 @@ void run_server(struct sockaddr_un *addr, int sock, Pros *list)</span>
+<span style="color: #F8F8F2"> </span>   }
+
+<span style="color: #F8F8F2"> </span>   if (bind(sock, (struct sockaddr *)addr, sizeof(*addr)) &lt; 0)
+<span style="color: #FF4689">-       warn(&quot;Bind&quot;, &quot;failed: %s&quot;, strerror(errno));</span>
+<span style="color: #A6E22E">+       warn(&quot;Bind: failed: %s&quot;, strerror(errno));</span>
+
+<span style="color: #F8F8F2"> </span>   if (listen(sock, 5) &lt; 0)
+<span style="color: #FF4689">-       warn(&quot;Listen&quot;, &quot;failed: %s&quot;, strerror(errno));</span>
+<span style="color: #A6E22E">+       warn(&quot;Listen failed: %s&quot;, strerror(errno));</span>
+
+<span style="color: #F8F8F2"> </span>   while (1) {
+<span style="color: #F8F8F2"> </span>       int client = accept(sock, NULL, NULL);
+<span style="color: #959077">@@ -215,7 +204,7 @@ void run_client(int argc, char const *argv[], struct sockaddr_un *addr, int sock</span>
+<span style="color: #F8F8F2"> </span>   }
+
+<span style="color: #F8F8F2"> </span>   if (connect(sock, (struct sockaddr *)addr, sizeof(*addr)) &lt; 0) {
+<span style="color: #FF4689">-       warn(&quot;Connect&quot;, &quot;failed: %s&quot;, strerror(errno));</span>
+<span style="color: #A6E22E">+       warn(&quot;Connect: failed: %s&quot;, strerror(errno));</span>
+<span style="color: #F8F8F2"> </span>       return;
+<span style="color: #F8F8F2"> </span>   }
+<span style="color: #F8F8F2"> </span>   write(sock, buf, strlen(buf));
+<span style="color: #959077">@@ -229,18 +218,17 @@ int main(int argc, char const *argv[])</span>
+
+<span style="color: #F8F8F2"> </span>   int sock = socket(AF_UNIX, SOCK_STREAM, 0);
+<span style="color: #F8F8F2"> </span>   if (sock &lt; 0)
+<span style="color: #FF4689">-       warn(&quot;Socket&quot;, &quot;failed to create socket: %s&quot;, strerror(errno));</span>
+<span style="color: #A6E22E">+       warn(&quot;Socket: failed to create socket: %s&quot;, strerror(errno));</span>
+
+<span style="color: #F8F8F2"> </span>   Pros *list = init();
+
+<span style="color: #F8F8F2"> </span>   for (int i = 1; i &lt; argc; ++i) {
+<span style="color: #FF4689">-       if (!strcmp(argv[i], &quot;-s&quot;) || !strcmp(argv[i], &quot;--server&quot;)) {</span>
+<span style="color: #A6E22E">+         if (strcmp(argv[i], &quot;-s&quot;) == 0 || strcmp(argv[i], &quot;--server&quot;) == 0) {</span>
+<span style="color: #F8F8F2"> </span>           if (access(SOCKET_PATH, F_OK) == 0){
+<span style="color: #F8F8F2"> </span>               if ( connect(sock, (struct sockaddr *)&amp;addr, sizeof(addr) ) == 0 )
+<span style="color: #FF4689">-                   unlink(SOCKET_PATH);</span>
+<span style="color: #FF4689">-               else</span>
+<span style="color: #FF4689">-                   die(&quot;ERROR: socket exists in &quot; SOCKET_PATH);</span>
+<span style="color: #FF4689">-           }</span>
+<span style="color: #A6E22E">+                   die(&quot;Socket: socket exists and connectable.&quot;);      </span>
+<span style="color: #A6E22E">+           }else </span>
+<span style="color: #A6E22E">+             unlink(SOCKET_PATH);</span>
+<span style="color: #F8F8F2"> </span>           run_server(&amp;addr, sock, list);
+<span style="color: #F8F8F2"> </span>       }
+<span style="color: #F8F8F2"> </span>   }
+</code></pre></div></td></tr></table></div>
+
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

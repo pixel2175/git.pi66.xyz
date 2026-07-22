@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A web interface for the pi66.xyz Git server">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - pixel-tool - theme/purpel.json</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> pixel-tool </strong>
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/pixel-tool" > https://git.pi66.xyz/pixel-tool </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/pixel-tool/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pixel-tool/license.html">LICENSE</a>
+</nav>
+
+<h1>
+	theme/purpel.json
+</h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 91</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 92</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 93</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 94</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 95</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 96</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 97</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 98</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 99</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">100</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">101</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">102</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">103</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">104</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">105</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">106</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">107</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">108</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">109</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">110</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">111</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">112</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">113</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">114</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">115</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">116</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">117</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">118</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">119</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">120</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">121</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">122</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">123</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">124</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">125</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">126</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">127</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">128</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">129</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">130</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">131</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">132</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">133</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">134</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">135</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">136</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">137</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">138</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">139</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">140</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">141</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">142</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">143</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">144</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">145</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">146</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">147</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">148</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">149</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">150</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">151</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">152</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">153</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">154</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">155</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">{</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTk&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#2d004b&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#1b0034&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkToplevel&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#2d004b&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#1b0034&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkFrame&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#3a004d&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#2c074f&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;top_fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4e005e&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#370048&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6c0066&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#4b0048&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkButton&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#b4b4b4&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6a1b9a&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#7d7d7d&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#3E454A&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#949A9F&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;black&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color_disabled&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray74&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray60&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkLabel&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;transparent&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#f5f5f5&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkEntry&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4a0072&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#31004b&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;placeholder_text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ce93d8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#b39ddb&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkCheckBox&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#512da8&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#3E454A&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#949A9F&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6a1b9a&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#4527a0&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;checkmark_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#f5f5f5&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color_disabled&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray60&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray45&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkSwitch&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">1000</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_length&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#72619B&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;progress_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#3B1F7C&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4a0072&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#b4b4b4&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6a1b9a&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#7d7d7d&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#f5f5f5&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color_disabled&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray60&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray45&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkRadioButton&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">1000</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width_checked&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width_unchecked&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">3</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#512da8&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#3E454A&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#949A9F&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6a1b9a&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#4527a0&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#f5f5f5&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color_disabled&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray60&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray45&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkProgressBar&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">1000</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;progress_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#512da8&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkSlider&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">1000</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">1000</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_length&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;progress_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4a0072&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#31004b&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#512da8&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6a1b9a&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#4527a0&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkOptionMenu&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#512da8&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6a1b9a&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#4527a0&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#5c6bc0&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#3f51b5&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color_disabled&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray74&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray60&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkComboBox&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4a0072&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#31004b&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ab47bc&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#f5f5f5&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color_disabled&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray50&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray45&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkScrollbar&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">1000</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_spacing&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">4</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;transparent&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;button_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ab47bc&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkSegmentedButton&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">2</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;selected_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#512da8&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;selected_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#6a1b9a&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#4527a0&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;unselected_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;unselected_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ab47bc&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#ffffff&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color_disabled&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;gray74&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;gray60&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkTextbox&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;corner_radius&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">6</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_width&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4a0072&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#31004b&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;border_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#f5f5f5&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;scrollbar_button_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ba68c8&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#9575cd&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;scrollbar_button_hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ab47bc&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkScrollableFrame&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;label_fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4e005e&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#370048&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;DropdownMenu&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;fg_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#4a0072&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#31004b&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;hover_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#ab47bc&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#7b1fa2&quot;</span><span style="color: #F8F8F2">],</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;text_color&quot;</span><span style="color: #F8F8F2">: [</span><span style="color: #E6DB74">&quot;#f5f5f5&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;#d1c4e9&quot;</span><span style="color: #F8F8F2">]</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;CTkFont&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;macOS&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;family&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;Poppins&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;size&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">13</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;weight&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;normal&quot;</span>
+<span style="color: #F8F8F2">    },</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;Windows&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;family&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;Poppins&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;size&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">13</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;weight&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;normal&quot;</span>
+<span style="color: #F8F8F2">    },</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;Linux&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;family&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;Poppins&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;size&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">13</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;weight&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;normal&quot;</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">  }</span>
+<span style="color: #F8F8F2">}</span>
+</code></pre></div></td></tr></table></div>
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

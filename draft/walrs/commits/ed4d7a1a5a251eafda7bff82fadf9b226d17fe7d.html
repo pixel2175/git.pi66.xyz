@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="pywal but if its Fast-Minimal-Simple">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - walrs - remove clap and remove the auto complete</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> walrs </strong>
+		
+			<br>
+			pywal but if its Fast-Minimal-Simple
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/walrs" > https://git.pi66.xyz/walrs </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/walrs/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/license.html">LICENSE</a>
+</nav>
+
+<p><a href="/walrs/log.html">← back to log</a></p>
+<h1>remove clap and remove the auto complete</h1>
+
+
+<blockquote>
+	<p>
+		<strong>author:</strong> pixel2175 <br>
+		<strong>date:</strong>   2025-05-31 20:12   <br>
+		<strong>hash:</strong>   ed4d7a1a5a251eafda7bff82fadf9b226d17fe7d   <br>
+	</p>
+</blockquote>
+
+
+<table class="!w-full !table-fixed !border-1 ">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>+</th>
+			<th>-</th>
+		</tr>
+	</thead>
+	<tbody>
+
+
+		<tr>
+			<td>src/completions.rs</td>
+			<td class="!text-green-500 text-right">0</td>
+			<td class="!text-red-500 text-right">67</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">73</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">diff --git a/src/completions.rs b/src/completions.rs</span>
+deleted file mode 100644
+<span style="color: #F8F8F2">index f496f0a..0000000</span>
+<span style="color: #FF4689">--- a/src/completions.rs</span>
+<span style="color: #A6E22E">+++ /dev/null</span>
+<span style="color: #959077">@@ -1,67 +0,0 @@</span>
+<span style="color: #FF4689">-use clap::CommandFactory;</span>
+<span style="color: #FF4689">-use clap_complete::{Shell, generate};</span>
+<span style="color: #FF4689">-use dirs_next::home_dir;</span>
+<span style="color: #FF4689">-use std::fs;</span>
+<span style="color: #FF4689">-use std::path::PathBuf;</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-pub fn install_completions() -&gt; std::io::Result&lt;()&gt; {</span>
+<span style="color: #FF4689">-    let shell = detect_shell();</span>
+<span style="color: #FF4689">-    let mut cmd = crate::Arg::command();</span>
+<span style="color: #FF4689">-    let app_name = cmd.get_name().to_string();</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-    let (target_dir, completion_file) = match shell {</span>
+<span style="color: #FF4689">-        Shell::Bash =&gt; (</span>
+<span style="color: #FF4689">-            home_dir().unwrap().join(&quot;.bash_completion.d&quot;),</span>
+<span style="color: #FF4689">-            PathBuf::from(app_name.clone()),</span>
+<span style="color: #FF4689">-        ),</span>
+<span style="color: #FF4689">-        Shell::Zsh =&gt; (</span>
+<span style="color: #FF4689">-            home_dir().unwrap().join(&quot;.zsh/completions&quot;),</span>
+<span style="color: #FF4689">-            PathBuf::from(format!(&quot;_{}&quot;, app_name)),</span>
+<span style="color: #FF4689">-        ),</span>
+<span style="color: #FF4689">-        Shell::Fish =&gt; (</span>
+<span style="color: #FF4689">-            home_dir().unwrap().join(&quot;.config/fish/completions&quot;),</span>
+<span style="color: #FF4689">-            PathBuf::from(format!(&quot;{}.fish&quot;, app_name)),</span>
+<span style="color: #FF4689">-        ),</span>
+<span style="color: #FF4689">-        Shell::PowerShell =&gt; (</span>
+<span style="color: #FF4689">-            home_dir().unwrap().join(&quot;Documents/PowerShell/Modules&quot;),</span>
+<span style="color: #FF4689">-            PathBuf::from(format!(&quot;{}.ps1&quot;, app_name)),</span>
+<span style="color: #FF4689">-        ),</span>
+<span style="color: #FF4689">-        _ =&gt; {</span>
+<span style="color: #FF4689">-            return Err(std::io::Error::new(</span>
+<span style="color: #FF4689">-                std::io::ErrorKind::Unsupported,</span>
+<span style="color: #FF4689">-                &quot;Unsupported shell&quot;,</span>
+<span style="color: #FF4689">-            ));</span>
+<span style="color: #FF4689">-        }</span>
+<span style="color: #FF4689">-    };</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-    fs::create_dir_all(&amp;target_dir)?;</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-    let mut file = fs::File::create(target_dir.join(completion_file))?;</span>
+<span style="color: #FF4689">-    generate(shell, &amp;mut cmd, app_name, &amp;mut file);</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-    Ok(())</span>
+<span style="color: #FF4689">-}</span>
+<span style="color: #FF4689">-</span>
+<span style="color: #FF4689">-fn detect_shell() -&gt; Shell {</span>
+<span style="color: #FF4689">-    std::env::var(&quot;SHELL&quot;)</span>
+<span style="color: #FF4689">-        .ok()</span>
+<span style="color: #FF4689">-        .and_then(|shell| {</span>
+<span style="color: #FF4689">-            if shell.contains(&quot;zsh&quot;) {</span>
+<span style="color: #FF4689">-                Some(Shell::Zsh)</span>
+<span style="color: #FF4689">-            } else if shell.contains(&quot;bash&quot;) {</span>
+<span style="color: #FF4689">-                Some(Shell::Bash)</span>
+<span style="color: #FF4689">-            } else if shell.contains(&quot;fish&quot;) {</span>
+<span style="color: #FF4689">-                Some(Shell::Fish)</span>
+<span style="color: #FF4689">-            } else {</span>
+<span style="color: #FF4689">-                None</span>
+<span style="color: #FF4689">-            }</span>
+<span style="color: #FF4689">-        })</span>
+<span style="color: #FF4689">-        .unwrap_or_else(|| {</span>
+<span style="color: #FF4689">-            if cfg!(windows) {</span>
+<span style="color: #FF4689">-                Shell::PowerShell</span>
+<span style="color: #FF4689">-            } else {</span>
+<span style="color: #FF4689">-                // Default to bash if detection fails</span>
+<span style="color: #FF4689">-                Shell::Bash</span>
+<span style="color: #FF4689">-            }</span>
+<span style="color: #FF4689">-        })</span>
+<span style="color: #FF4689">-}</span>
+</code></pre></div></td></tr></table></div>
+
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

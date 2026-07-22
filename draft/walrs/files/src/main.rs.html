@@ -1,0 +1,488 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="pywal but if its Fast-Minimal-Simple">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - walrs - src/main.rs</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> walrs </strong>
+		
+			<br>
+			pywal but if its Fast-Minimal-Simple
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/walrs" > https://git.pi66.xyz/walrs </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/walrs/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/license.html">LICENSE</a>
+</nav>
+
+<h1>
+	src/main.rs
+</h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 91</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 92</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 93</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 94</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 95</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 96</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 97</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 98</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 99</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">100</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">101</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">102</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">103</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">104</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">105</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">106</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">107</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">108</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">109</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">110</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">111</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">112</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">113</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">114</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">115</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">116</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">117</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">118</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">119</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">120</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">121</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">122</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">123</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">124</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">125</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">126</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">127</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">128</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">129</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">130</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">131</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">132</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">133</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">134</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">135</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">136</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">137</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">138</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">139</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">140</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">141</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">142</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">143</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">144</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">145</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">146</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">147</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">148</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">149</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">150</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">151</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">152</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">153</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">154</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">155</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">156</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">157</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">158</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">159</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">160</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">161</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">162</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">163</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">164</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">165</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">166</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">167</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">168</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">169</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">170</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">171</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">172</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">173</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">174</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">175</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">176</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">177</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">178</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">179</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">180</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">181</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">182</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">183</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">184</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">185</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">186</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">187</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">188</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">189</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">190</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">191</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">192</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">mod</span><span style="color: #F8F8F2"> create_templates;</span>
+<span style="color: #66D9EF">mod</span><span style="color: #F8F8F2"> get_colors;</span>
+<span style="color: #66D9EF">mod</span><span style="color: #F8F8F2"> reload;</span>
+<span style="color: #66D9EF">mod</span><span style="color: #F8F8F2"> theme;</span>
+<span style="color: #66D9EF">mod</span><span style="color: #F8F8F2"> utils;</span>
+<span style="color: #66D9EF">mod</span><span style="color: #F8F8F2"> wallpaper;</span>
+
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> argh::FromArgs;</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> create_templates::create_template;</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> get_colors::get_colors;</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> reload::reload;</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> std::fs::{copy, create_dir_all};</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> std::process::exit;</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> theme::{print_themes, set_theme, theme_exists};</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> utils::</span><span style="color: #FF4689">*</span><span style="color: #F8F8F2">;</span>
+
+<span style="color: #959077">#[derive(FromArgs)]</span>
+<span style="color: #959077">#[argh(description = </span><span style="color: #E6DB74">&quot;walrs - Generate colorscheme from image&quot;</span><span style="color: #959077">)]</span>
+<span style="color: #66D9EF">struct</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">Arg</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(option, short = &#39;i&#39;, description = </span><span style="color: #E6DB74">&quot;path to image or directory&quot;</span><span style="color: #959077">)]</span>
+<span style="color: #F8F8F2">    image: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #F8F8F2">String</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        switch,</span>
+<span style="color: #959077">        short = &#39;r&#39;,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;reload without changing the wallpaper&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    reload: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        switch,</span>
+<span style="color: #959077">        short = &#39;R&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;reload-no&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;will be removed in the next update; use -w instead&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    reload_no: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        option,</span>
+<span style="color: #959077">        short = &#39;t&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;theme&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;use external theme file from .config/walrs/colorschemes&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    theme: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #F8F8F2">String</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        option,</span>
+<span style="color: #959077">        short = &#39;g&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;generate&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;generate &amp; save theme to .config/walrs/colorschemes&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    generate: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #F8F8F2">String</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        option,</span>
+<span style="color: #959077">        short = &#39;s&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;saturation&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;set saturation value (-128 to 127)&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    saturation: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #66D9EF">i16</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        option,</span>
+<span style="color: #959077">        short = &#39;b&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;brightness&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;set brightness value (-128 to 127)&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    brightness: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #66D9EF">i16</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        switch,</span>
+<span style="color: #959077">        short = &#39;S&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;scripts&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;skip running scripts in ~/.config/walrs/scripts/&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    run_scripts: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #66D9EF">bool</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        switch,</span>
+<span style="color: #959077">        short = &#39;W&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;walless&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;skip changing the wallpaper&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    walless: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #66D9EF">bool</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(</span>
+<span style="color: #959077">        switch,</span>
+<span style="color: #959077">        short = &#39;q&#39;,</span>
+<span style="color: #959077">        long = </span><span style="color: #E6DB74">&quot;quiet&quot;</span><span style="color: #959077">,</span>
+<span style="color: #959077">        description = </span><span style="color: #E6DB74">&quot;set quit mode (no output)&quot;</span>
+<span style="color: #959077">    )]</span>
+<span style="color: #F8F8F2">    quit: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">,</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">#[argh(switch, short = &#39;v&#39;, long = </span><span style="color: #E6DB74">&quot;version&quot;</span><span style="color: #959077">, description = </span><span style="color: #E6DB74">&quot;show version&quot;</span><span style="color: #959077">)]</span>
+<span style="color: #F8F8F2">    version: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">main</span><span style="color: #F8F8F2">() {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// get and load args from user</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> arg: </span><span style="color: #A6E22E">Arg</span><span style="color: #F8F8F2"> </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> argh::from_env();</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// save the quit status</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> send </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> </span><span style="color: #FF4689">!</span><span style="color: #F8F8F2">arg.quit;</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// print the version</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> arg.version {</span>
+<span style="color: #F8F8F2">        info(</span><span style="color: #E6DB74">&quot;Version&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #A6E22E">env!</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">&quot;CARGO_PKG_VERSION&quot;</span><span style="color: #F8F8F2">), send);</span>
+<span style="color: #F8F8F2">        exit(</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    }</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// this will be removed next update</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> arg.reload_no {</span>
+<span style="color: #F8F8F2">        warning(</span>
+<span style="color: #F8F8F2">            </span><span style="color: #E6DB74">&quot;Reload&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">            </span><span style="color: #E6DB74">&quot;this will be removed in the next update, use -W instead&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">            send,</span>
+<span style="color: #F8F8F2">        );</span>
+<span style="color: #F8F8F2">        reload(send, </span><span style="color: #66D9EF">true</span><span style="color: #F8F8F2">, arg.run_scripts.unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">));</span>
+<span style="color: #F8F8F2">        exit(</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    }</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// reload colors with setting wallpaper</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> arg.reload {</span>
+<span style="color: #F8F8F2">        reload(</span>
+<span style="color: #F8F8F2">            send,</span>
+<span style="color: #F8F8F2">            arg.walless.unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">),</span>
+<span style="color: #F8F8F2">            arg.run_scripts.unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">),</span>
+<span style="color: #F8F8F2">        );</span>
+<span style="color: #F8F8F2">        exit(</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    }</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// if user didn&#39;t type any thing</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> arg.image.is_none() </span><span style="color: #FF4689">&amp;&amp;</span><span style="color: #F8F8F2"> arg.theme.is_none() </span><span style="color: #FF4689">&amp;&amp;</span><span style="color: #F8F8F2"> arg.generate.is_none() {</span>
+<span style="color: #F8F8F2">        warning(</span><span style="color: #E6DB74">&quot;Args&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;run: walrs --help&quot;</span><span style="color: #F8F8F2">, send);</span>
+<span style="color: #F8F8F2">        exit(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    }</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// show or set theme from user</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> Some(v) </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> arg.theme {</span>
+<span style="color: #F8F8F2">        </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> config </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> get_config(send);</span>
+<span style="color: #F8F8F2">        </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> v </span><span style="color: #FF4689">==</span><span style="color: #F8F8F2"> </span><span style="color: #E6DB74">&quot;themes&quot;</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">            print_themes(send);</span>
+<span style="color: #F8F8F2">        } </span><span style="color: #66D9EF">else</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> theme_exists(</span><span style="color: #FF4689">&amp;</span><span style="color: #F8F8F2">config) {</span>
+<span style="color: #F8F8F2">            set_theme(v, send, arg.run_scripts.unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">));</span>
+<span style="color: #F8F8F2">        } </span><span style="color: #66D9EF">else</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">            </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> colorschemes_dir </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> config.join(</span><span style="color: #E6DB74">&quot;walrs&quot;</span><span style="color: #F8F8F2">).join(</span><span style="color: #E6DB74">&quot;colorschemes&quot;</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">            create_dir_all(</span><span style="color: #FF4689">&amp;</span><span style="color: #F8F8F2">colorschemes_dir).unwrap();</span>
+<span style="color: #F8F8F2">            </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> walrs_cache </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> share_files();</span>
+<span style="color: #F8F8F2">            </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> </span><span style="color: #FF4689">!</span><span style="color: #F8F8F2">theme_exists(walrs_cache.parent().unwrap()) {</span>
+<span style="color: #F8F8F2">                warning(</span><span style="color: #E6DB74">&quot;theme&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;Can&#39;t find configuration directory&quot;</span><span style="color: #F8F8F2">, send);</span>
+<span style="color: #F8F8F2">                exit(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">            }</span>
+<span style="color: #F8F8F2">            run(</span><span style="color: #FF4689">&amp;</span><span style="color: #A6E22E">format!</span><span style="color: #F8F8F2">(</span>
+<span style="color: #F8F8F2">                </span><span style="color: #E6DB74">&quot;cp -r {}/* {}&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">                walrs_cache.join(</span><span style="color: #E6DB74">&quot;colorschemes&quot;</span><span style="color: #F8F8F2">).display(),</span>
+<span style="color: #F8F8F2">                colorschemes_dir.display()</span>
+<span style="color: #F8F8F2">            ));</span>
+<span style="color: #F8F8F2">            set_theme(v, send, arg.run_scripts.unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">));</span>
+<span style="color: #F8F8F2">        }</span>
+<span style="color: #F8F8F2">        exit(</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    }</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// generate a new theme from current colors</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> Some(v) </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> arg.generate {</span>
+<span style="color: #F8F8F2">        </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> dis </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> get_config(send).join(</span><span style="color: #E6DB74">&quot;walrs&quot;</span><span style="color: #F8F8F2">).join(</span><span style="color: #E6DB74">&quot;colorschemes&quot;</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">        create_dir_all(dis.join(</span><span style="color: #E6DB74">&quot;dark&quot;</span><span style="color: #F8F8F2">)).unwrap();</span>
+<span style="color: #F8F8F2">        copy(</span>
+<span style="color: #F8F8F2">            get_cache(send).join(</span><span style="color: #E6DB74">&quot;wal&quot;</span><span style="color: #F8F8F2">).join(</span><span style="color: #E6DB74">&quot;colors&quot;</span><span style="color: #F8F8F2">),</span>
+<span style="color: #F8F8F2">            dis.join(</span><span style="color: #E6DB74">&quot;dark&quot;</span><span style="color: #F8F8F2">).join(v),</span>
+<span style="color: #F8F8F2">        )</span>
+<span style="color: #F8F8F2">        .unwrap();</span>
+<span style="color: #F8F8F2">        info(</span><span style="color: #E6DB74">&quot;Generate&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;generate colors&quot;</span><span style="color: #F8F8F2">, send);</span>
+<span style="color: #F8F8F2">        exit(</span><span style="color: #AE81FF">0</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    };</span>
+
+<span style="color: #F8F8F2">    </span><span style="color: #959077">// analyze the image and generate the palette</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> arg.image.is_some() {</span>
+<span style="color: #F8F8F2">        </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> image_path </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> image_path(arg.image, send);</span>
+<span style="color: #F8F8F2">        </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> palette </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> get_colors(</span><span style="color: #FF4689">&amp;</span><span style="color: #F8F8F2">image_path, send, arg.brightness, arg.saturation);</span>
+<span style="color: #F8F8F2">        info(</span><span style="color: #E6DB74">&quot;Generate&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;generate colors&quot;</span><span style="color: #F8F8F2">, send);</span>
+
+<span style="color: #F8F8F2">        create_template(palette, </span><span style="color: #FF4689">&amp;</span><span style="color: #F8F8F2">image_path, send);</span>
+<span style="color: #F8F8F2">        info(</span><span style="color: #E6DB74">&quot;Template&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;create templates&quot;</span><span style="color: #F8F8F2">, send);</span>
+
+<span style="color: #F8F8F2">        reload(</span>
+<span style="color: #F8F8F2">            send,</span>
+<span style="color: #F8F8F2">            arg.walless.unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">),</span>
+<span style="color: #F8F8F2">            arg.run_scripts.unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">),</span>
+<span style="color: #F8F8F2">        );</span>
+<span style="color: #F8F8F2">        print_colors(send);</span>
+<span style="color: #F8F8F2">    };</span>
+<span style="color: #F8F8F2">}</span>
+</code></pre></div></td></tr></table></div>
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

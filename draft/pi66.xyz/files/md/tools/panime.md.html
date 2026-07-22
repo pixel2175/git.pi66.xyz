@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A web interface for the pi66.xyz Git server">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - pi66.xyz - md/tools/panime.md</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> pi66.xyz </strong>
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/pi66.xyz" > https://git.pi66.xyz/pi66.xyz </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/pi66.xyz/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/pi66.xyz/license.html">LICENSE</a>
+</nav>
+
+<h1>
+	md/tools/panime.md
+</h1>
+<p><div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>{% extends &quot;layout.html&quot; %}
+
+{% block meta_description %}
+Anime API documentation for accessing anime data, search, episode lists, and streaming links via a RESTful JSON API at https://pi66.xyz/api. Includes endpoints for listing anime, retrieving details by slug, fetching episodes with quality options, and streaming video content.
+{% endblock %}
+
+{% block title %} PAnime {% endblock %}
+{% block content %}
+
+<span style="color: #F8F8F2"># &gt;**Anime API Documentation**</span>
+
+Base URL: <span style="color: #E6DB74">`https://pi66.xyz/api`</span>
+
+<span style="color: #F8F8F2"># &gt;**Overview**</span>
+
+This API provides access to anime information and streaming capabilities. All responses are in JSON format unless otherwise specified.
+
+<span style="color: #F8F8F2"># &gt;**Endpoints**</span>
+
+<span style="color: #F8F8F2"># &gt;**1. Get Anime List/Search**</span>
+
+<span style="color: #F8F8F2; font-weight: bold">**GET**</span> <span style="color: #E6DB74">`/anime`</span>
+
+Retrieves a paginated list of anime or searches for anime by title.
+
+<span style="color: #F8F8F2"># &gt;**Query Parameters**</span>
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| query | string | No | Search term for anime title (case-insensitive) |
+| page | integer | No | Page number for pagination |
+
+<span style="color: #F8F8F2"># &gt;**Example Requests**</span>
+
+<span style="color: #F8F8F2; font-weight: bold">**Get paginated anime list:**</span>
+</code></pre></div></td></tr></table></div>
+GET https://pi66.xyz/api/anime?page=1
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>**Search for anime:**
+</code></pre></div></td></tr></table></div>
+GET https://pi66.xyz/api/anime?query=naruto
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code># &gt;**Example Response**
+
+```json
+[
+  {
+    &quot;cover&quot;: &quot;https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20-dE6UHbFFg1A5.jpg&quot;,
+    &quot;episodes&quot;: 220,
+    &quot;id&quot;: 2313,
+    &quot;poster&quot;: &quot;https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20-dE6UHbFFg1A5.jpg&quot;,
+    &quot;rating&quot;: 79,
+    &quot;slug&quot;: &quot;naruto&quot;,
+    &quot;status&quot;: &quot;FINISHED&quot;,
+    &quot;story&quot;: &quot;يعيش Naruto Uzumaki ، النينجا المفرطة النشاط ورأسها ، في Konohagakure ...&quot;,
+    &quot;title_en&quot;: &quot;Naruto&quot;,
+    &quot;title_jp&quot;: &quot;NARUTO -ナルト-&quot;,
+    &quot;type&quot;: &quot;TV&quot;
+  },
+  {
+    &quot;cover&quot;: &quot;https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21220-3cWAUtR1Ih5h.jpg&quot;,
+    &quot;episodes&quot;: 1,
+    &quot;id&quot;: 504,
+    &quot;poster&quot;: &quot;https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21220-3cWAUtR1Ih5h.jpg&quot;,
+    &quot;rating&quot;: 70,
+    &quot;slug&quot;: &quot;boruto-naruto-the-movie&quot;,
+    &quot;status&quot;: &quot;FINISHED&quot;,
+    &quot;story&quot;: &quot;بوروتو هو ابن ناروتو الذي يرفض والده تمامًا. وراء هذا ...&quot;,
+    &quot;title_en&quot;: &quot;Boruto: Naruto the Movie&quot;,
+    &quot;title_jp&quot;: &quot;BORUTO -NARUTO THE MOVIE-&quot;,
+    &quot;type&quot;: &quot;MOVIE&quot;
+  }
+]
+</code></pre></div></td></tr></table></div></p>
+<h1>&gt;<strong>2. Get Anime by Slug</strong></h1>
+<p><strong>GET</strong> <code>/anime/{slug}</code></p>
+<p>Retrieves detailed information about a specific anime.</p>
+<h1>&gt;<strong>Path Parameters</strong></h1>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>slug</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Unique identifier for the anime</td>
+</tr>
+</tbody>
+</table>
+<h1>&gt;<strong>Example Request</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>GET https://pi66.xyz/api/anime/naruto
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>Example Response</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;cover&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20-dE6UHbFFg1A5.jpg&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;episodes&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">220</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;id&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">2313</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;poster&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20-dE6UHbFFg1A5.jpg&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;rating&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #AE81FF">79</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;slug&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;naruto&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;status&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;FINISHED&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;story&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;يعيش Naruto Uzumaki ، النينجا المفرطة النشاط ورأسها ، في Konohagakure ...&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;title_en&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;Naruto&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;title_jp&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;NARUTO -ナルト-&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;type&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;TV&quot;</span>
+<span style="color: #F8F8F2">  }</span>
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>Error Response</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">[]</span>
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>3. Get Anime Episodes</strong></h1>
+<p><strong>GET</strong> <code>/anime/{slug}/episodes</code></p>
+<p>Retrieves available episodes and streaming links for a specific anime with arabic subtitle.</p>
+<h1>&gt;<strong>Path Parameters</strong></h1>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slug</td>
+<td>string</td>
+<td>Yes</td>
+<td>Unique identifier for the anime</td>
+</tr>
+</tbody>
+</table>
+<h1>&gt;<strong>Example Request</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>GET https://pi66.xyz/api/anime/naruto/episodes
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>Example Response</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">{</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;2&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;720p&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AY&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/2/720p/AY&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AB&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/2/720p/AB&quot;</span>
+<span style="color: #F8F8F2">    },</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;1080p&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AY&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/2/1080p/AY&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AB&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/2/1080p/AB&quot;</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">  },</span>
+<span style="color: #F8F8F2">  </span><span style="color: #FF4689">&quot;3&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;720p&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AY&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/3/720p/AY&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AB&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/3/720p/AB&quot;</span>
+<span style="color: #F8F8F2">    },</span>
+<span style="color: #F8F8F2">    </span><span style="color: #FF4689">&quot;1080p&quot;</span><span style="color: #F8F8F2">: {</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AY&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/3/1080p/AY&quot;</span><span style="color: #F8F8F2">,</span>
+<span style="color: #F8F8F2">      </span><span style="color: #FF4689">&quot;AB&quot;</span><span style="color: #F8F8F2">: </span><span style="color: #E6DB74">&quot;/api/stream/naruto/3/1080p/AB&quot;</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">  }</span>
+<span style="color: #F8F8F2">}</span>
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>Error Response</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">[]</span>
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>4. Stream Episode</strong></h1>
+<p><strong>GET</strong> <code>/stream/{slug}/{episode}/{quality}/{server}</code></p>
+<p>Streams a specific episode of an anime.</p>
+<h1>&gt;<strong>Path Parameters</strong></h1>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slug</td>
+<td>string</td>
+<td>Yes</td>
+<td>Unique identifier for the anime</td>
+</tr>
+<tr>
+<td>episode</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Episode number</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>string</td>
+<td>Yes</td>
+<td>Video quality (e.g., "720p", "1080p")</td>
+</tr>
+<tr>
+<td>server</td>
+<td>string</td>
+<td>Yes</td>
+<td>Server identifier ("AY" or "AB")</td>
+</tr>
+</tbody>
+</table>
+<h1>&gt;<strong>Server Types</strong></h1>
+<ul>
+<li><strong>AY</strong>: From Animeiat.net </li>
+<li><strong>AB</strong>: From Animeblkom.net </li>
+</ul>
+<h1>&gt;<strong>Example Request</strong></h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code>GET https://pi66.xyz/api/stream/oooku/1/360p/AY
+</code></pre></div></td></tr></table></div>
+<h1>&gt;<strong>Authentication</strong></h1>
+<p>No authentication is currently required for any endpoints.</p>
+<h1>&gt;<strong>Notes</strong></h1>
+<ul>
+<li>All anime titles support Arabic</li>
+<li>Quality options depend on what's available for each episode</li>
+<li>Server availability may vary per episode and quality</li>
+</ul>
+{% endblock %}
+```</p>
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

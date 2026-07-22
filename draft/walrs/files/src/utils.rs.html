@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="pywal but if its Fast-Minimal-Simple">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - walrs - src/utils.rs</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> walrs </strong>
+		
+			<br>
+			pywal but if its Fast-Minimal-Simple
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/walrs" > https://git.pi66.xyz/walrs </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/walrs/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/license.html">LICENSE</a>
+</nav>
+
+<h1>
+	src/utils.rs
+</h1>
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 91</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 92</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 93</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 94</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 95</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 96</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 97</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 98</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 99</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">100</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">101</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">102</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">103</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">104</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">105</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">106</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">107</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">108</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> std::env;</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> std::path::{Path, PathBuf};</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> std::process::{exit, Stdio};</span>
+<span style="color: #66D9EF">use</span><span style="color: #F8F8F2"> std::{fs, process::Command};</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">share_files</span><span style="color: #F8F8F2">() -&gt; </span><span style="color: #A6E22E">PathBuf</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    PathBuf::from(</span><span style="color: #E6DB74">&quot;/usr&quot;</span><span style="color: #F8F8F2">).join(</span><span style="color: #E6DB74">&quot;share&quot;</span><span style="color: #F8F8F2">).join(</span><span style="color: #E6DB74">&quot;walrs&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">image_path</span><span style="color: #F8F8F2">(image: Option</span><span style="color: #FF4689">&lt;</span><span style="color: #F8F8F2">String</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2">, send: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">) -&gt; String {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">match</span><span style="color: #F8F8F2"> image {</span>
+<span style="color: #F8F8F2">        Some(</span><span style="color: #66D9EF">ref</span><span style="color: #F8F8F2"> v) </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> Path::new(v).exists() </span><span style="color: #FF4689">=&gt;</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">match</span><span style="color: #F8F8F2"> get_absolute_path(v) {</span>
+<span style="color: #F8F8F2">            Some(p) </span><span style="color: #FF4689">=&gt;</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">                </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> Path::new(</span><span style="color: #FF4689">&amp;</span><span style="color: #F8F8F2">p).is_file() {</span>
+<span style="color: #F8F8F2">                    p</span>
+<span style="color: #F8F8F2">                } </span><span style="color: #66D9EF">else</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">                    std::</span><span style="color: #66D9EF">str</span><span style="color: #F8F8F2">::from_utf8(</span>
+<span style="color: #F8F8F2">                        </span><span style="color: #FF4689">&amp;</span><span style="color: #F8F8F2">std::process::Command::new(</span><span style="color: #E6DB74">&quot;sh&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">                            .arg(</span><span style="color: #E6DB74">&quot;-c&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">                            .arg(</span><span style="color: #A6E22E">format!</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">&quot;find </span><span style="color: #AE81FF">\&quot;</span><span style="color: #E6DB74">{p}</span><span style="color: #AE81FF">\&quot;</span><span style="color: #E6DB74"> -type f | sort -R | head -n1&quot;</span><span style="color: #F8F8F2">))</span>
+<span style="color: #F8F8F2">                            .output()</span>
+<span style="color: #F8F8F2">                            .unwrap()</span>
+<span style="color: #F8F8F2">                            .stdout,</span>
+<span style="color: #F8F8F2">                    )</span>
+<span style="color: #F8F8F2">                    .unwrap()</span>
+<span style="color: #F8F8F2">                    .trim()</span>
+<span style="color: #F8F8F2">                    .to_string()</span>
+<span style="color: #F8F8F2">                }</span>
+<span style="color: #F8F8F2">            }</span>
+<span style="color: #F8F8F2">            None </span><span style="color: #FF4689">=&gt;</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">                warning(</span><span style="color: #E6DB74">&quot;Wallpaper&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;Can&#39;t find wallpaper absolute path!&quot;</span><span style="color: #F8F8F2">, send);</span>
+<span style="color: #F8F8F2">                exit(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">            }</span>
+<span style="color: #F8F8F2">        },</span>
+<span style="color: #F8F8F2">        Some(_) </span><span style="color: #FF4689">=&gt;</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">            warning(</span><span style="color: #E6DB74">&quot;Image&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;Image does not exist&quot;</span><span style="color: #F8F8F2">, send);</span>
+<span style="color: #F8F8F2">            exit(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">        }</span>
+<span style="color: #F8F8F2">        None </span><span style="color: #FF4689">=&gt;</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">            warning(</span><span style="color: #E6DB74">&quot;Image&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;Can&#39;t find Image&quot;</span><span style="color: #F8F8F2">, send);</span>
+<span style="color: #F8F8F2">            exit(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">        }</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">run</span><span style="color: #F8F8F2">(command: </span><span style="color: #66D9EF">&amp;str</span><span style="color: #F8F8F2">) -&gt; </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    Command::new(</span><span style="color: #E6DB74">&quot;sh&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">        .arg(</span><span style="color: #E6DB74">&quot;-c&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">        .arg(command)</span>
+<span style="color: #F8F8F2">        .stdout(Stdio::null())</span>
+<span style="color: #F8F8F2">        .stderr(Stdio::null())</span>
+<span style="color: #F8F8F2">        .status()</span>
+<span style="color: #F8F8F2">        .map(</span><span style="color: #FF4689">|</span><span style="color: #F8F8F2">s</span><span style="color: #FF4689">|</span><span style="color: #F8F8F2"> s.success())</span>
+<span style="color: #F8F8F2">        .unwrap_or(</span><span style="color: #66D9EF">false</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">print_colors</span><span style="color: #F8F8F2">(send: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">) {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> send {</span>
+<span style="color: #F8F8F2">        </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> Ok(output) </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> Command::new(</span><span style="color: #E6DB74">&quot;bash&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">            .arg(</span><span style="color: #E6DB74">&quot;-c&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">            .arg(</span><span style="color: #E6DB74">r#&quot;for i in {30..37} 90; do echo -en &quot;\033[0;${i}m●\033[0m &quot;; done; echo&quot;#</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">            .output()</span>
+<span style="color: #F8F8F2">        {</span>
+<span style="color: #F8F8F2">            </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> output.status.success() {</span>
+<span style="color: #F8F8F2">                </span><span style="color: #A6E22E">print!</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">&quot;{}&quot;</span><span style="color: #F8F8F2">, String::from_utf8_lossy(</span><span style="color: #FF4689">&amp;</span><span style="color: #F8F8F2">output.stdout));</span>
+<span style="color: #F8F8F2">            }</span>
+<span style="color: #F8F8F2">        }</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">warning</span><span style="color: #F8F8F2">(title: </span><span style="color: #66D9EF">&amp;str</span><span style="color: #F8F8F2">, message: </span><span style="color: #66D9EF">&amp;str</span><span style="color: #F8F8F2">, send: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">) {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> send {</span>
+<span style="color: #F8F8F2">        </span><span style="color: #A6E22E">println!</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">&quot;[</span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[33mW</span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[0m] </span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[31m{title}:</span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[0m {message}.&quot;</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">info</span><span style="color: #F8F8F2">(title: </span><span style="color: #66D9EF">&amp;str</span><span style="color: #F8F8F2">, message: </span><span style="color: #66D9EF">&amp;str</span><span style="color: #F8F8F2">, send: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">) {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> send {</span>
+<span style="color: #F8F8F2">        </span><span style="color: #A6E22E">println!</span><span style="color: #F8F8F2">(</span><span style="color: #E6DB74">&quot;[</span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[32mI</span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[0m] </span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[31m{title}:</span><span style="color: #AE81FF">\x1b</span><span style="color: #E6DB74">[0m {message}.&quot;</span><span style="color: #F8F8F2">);</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">get_home</span><span style="color: #F8F8F2">(send: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">) -&gt; </span><span style="color: #A6E22E">PathBuf</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    env::var(</span><span style="color: #E6DB74">&quot;HOME&quot;</span><span style="color: #F8F8F2">).map(PathBuf::from).unwrap_or_else(</span><span style="color: #FF4689">|</span><span style="color: #F8F8F2">_</span><span style="color: #FF4689">|</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">        warning(</span><span style="color: #E6DB74">&quot;Home&quot;</span><span style="color: #F8F8F2">, </span><span style="color: #E6DB74">&quot;can&#39;t find the home dir&quot;</span><span style="color: #F8F8F2">, send);</span>
+<span style="color: #F8F8F2">        exit(</span><span style="color: #AE81FF">1</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">    })</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">get_config</span><span style="color: #F8F8F2">(send: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">) -&gt; </span><span style="color: #A6E22E">PathBuf</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    env::var_os(</span><span style="color: #E6DB74">&quot;XDG_CONFIG_HOME&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">        .map(PathBuf::from)</span>
+<span style="color: #F8F8F2">        .unwrap_or_else(</span><span style="color: #FF4689">||</span><span style="color: #F8F8F2"> get_home(send).join(</span><span style="color: #E6DB74">&quot;.config&quot;</span><span style="color: #F8F8F2">))</span>
+<span style="color: #F8F8F2">}</span>
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">get_cache</span><span style="color: #F8F8F2">(send: </span><span style="color: #66D9EF">bool</span><span style="color: #F8F8F2">) -&gt; </span><span style="color: #A6E22E">PathBuf</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    env::var_os(</span><span style="color: #E6DB74">&quot;XDG_CACHE_HOME&quot;</span><span style="color: #F8F8F2">)</span>
+<span style="color: #F8F8F2">        .map(PathBuf::from)</span>
+<span style="color: #F8F8F2">        .unwrap_or_else(</span><span style="color: #FF4689">||</span><span style="color: #F8F8F2"> get_home(send).join(</span><span style="color: #E6DB74">&quot;.cache&quot;</span><span style="color: #F8F8F2">))</span>
+<span style="color: #F8F8F2">}</span>
+
+<span style="color: #66D9EF">pub</span><span style="color: #F8F8F2"> </span><span style="color: #66D9EF">fn</span><span style="color: #F8F8F2"> </span><span style="color: #A6E22E">get_absolute_path</span><span style="color: #F8F8F2">(path_str: </span><span style="color: #66D9EF">&amp;str</span><span style="color: #F8F8F2">) -&gt; Option</span><span style="color: #FF4689">&lt;</span><span style="color: #F8F8F2">String</span><span style="color: #FF4689">&gt;</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">let</span><span style="color: #F8F8F2"> path </span><span style="color: #FF4689">=</span><span style="color: #F8F8F2"> Path::new(path_str);</span>
+<span style="color: #F8F8F2">    </span><span style="color: #66D9EF">if</span><span style="color: #F8F8F2"> </span><span style="color: #FF4689">!</span><span style="color: #F8F8F2">path.is_absolute() {</span>
+<span style="color: #F8F8F2">        fs::canonicalize(path).ok()</span><span style="color: #FF4689">?</span><span style="color: #F8F8F2">.to_str().map(</span><span style="color: #FF4689">|</span><span style="color: #F8F8F2">s</span><span style="color: #FF4689">|</span><span style="color: #F8F8F2"> s.to_string())</span>
+<span style="color: #F8F8F2">    } </span><span style="color: #66D9EF">else</span><span style="color: #F8F8F2"> {</span>
+<span style="color: #F8F8F2">        Some(path_str.to_string())</span>
+<span style="color: #F8F8F2">    }</span>
+<span style="color: #F8F8F2">}</span>
+</code></pre></div></td></tr></table></div>
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>

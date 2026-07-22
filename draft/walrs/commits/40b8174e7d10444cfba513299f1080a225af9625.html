@@ -1,0 +1,815 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="pywal but if its Fast-Minimal-Simple">
+		<meta name="author" content="Pi66">
+		<meta name="theme-color" content="#000000">
+		<title>Pi66 - walrs - add autocomplete</title>
+		<link rel="icon" href="/static/favicon.ico">
+		<link rel="stylesheet" href="/static/css/style.css"/>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser"></script>
+
+
+	</head>
+	<body class="font-[Pixelify] w-screen h-dvh max-w-[1200px] mx-auto overflow-hidden bg-black p-5 pb-0 flex flex-col gap-3">
+		<header class="py-2.5 justify-between h-12 px-3 border-[#333333] border-1 flex items-center">
+	<div class="flex items-center">
+		<a href="/" class="flex items-center">
+			<img
+				src="/static/icons/lain.gif" 
+				class="w-10 h-auto rounded-md object-contain saturate-150"
+			/>
+			<h1 class="pi66-title ml-4 text-green-700 font-bold !text-2xl">Pi66</h1>
+		</a>
+	</div>
+</header>
+
+		<div class="flex-1 flex flex-col gap-2 overflow-hidden">
+
+			<main class="flex-initial w-full box-border px-3 overflow-x-hidden pb-2 border border-[#333] overflow-y-auto">
+				
+<div>
+	<blockquote class="!p-0">
+		<p>
+		<strong class="text-xl"> walrs </strong>
+		
+			<br>
+			pywal but if its Fast-Minimal-Simple
+		
+		<br>
+		git clone <a href="https://git.pi66.xyz/walrs" > https://git.pi66.xyz/walrs </a>
+		</p>
+	</blockquote>
+
+</div>
+
+<nav class="flex gap-4 mb-4 pb-2 border-b border-[#333] text-sm">
+	<a class="text-gray-400 text-green-400 font-bold" href="/walrs/log.html">Log</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/files.html">Files</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/refs.html">Refs</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/readme.html">README</a> |
+	<a class="text-gray-400 hover:text-green-400"     href="/walrs/license.html">LICENSE</a>
+</nav>
+
+<p><a href="/walrs/log.html">← back to log</a></p>
+<h1>add autocomplete</h1>
+
+
+<blockquote>
+	<p>
+		<strong>author:</strong> pixel2175 <br>
+		<strong>date:</strong>   2025-06-03 20:53   <br>
+		<strong>hash:</strong>   40b8174e7d10444cfba513299f1080a225af9625   <br>
+	</p>
+</blockquote>
+
+
+<table class="!w-full !table-fixed !border-1 ">
+	<thead>
+		<tr>
+			<th>File</th>
+			<th>+</th>
+			<th>-</th>
+		</tr>
+	</thead>
+	<tbody>
+
+
+		<tr>
+			<td>Cargo.lock</td>
+			<td class="!text-green-500 text-right">23</td>
+			<td class="!text-red-500 text-right">23</td>
+		</tr>
+
+		<tr>
+			<td>Makefile</td>
+			<td class="!text-green-500 text-right">1</td>
+			<td class="!text-red-500 text-right">0</td>
+		</tr>
+
+		<tr>
+			<td>autocomplete.sh</td>
+			<td class="!text-green-500 text-right">170</td>
+			<td class="!text-red-500 text-right">0</td>
+		</tr>
+
+	</tbody>
+</table>
+
+<div class="highlight" style="background: #272822"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">  9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 81</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 82</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 83</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 84</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 85</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 86</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 87</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 88</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 89</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 90</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 91</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 92</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 93</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 94</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 95</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 96</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 97</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 98</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 99</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">100</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">101</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">102</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">103</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">104</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">105</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">106</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">107</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">108</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">109</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">110</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">111</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">112</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">113</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">114</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">115</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">116</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">117</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">118</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">119</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">120</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">121</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">122</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">123</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">124</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">125</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">126</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">127</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">128</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">129</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">130</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">131</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">132</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">133</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">134</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">135</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">136</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">137</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">138</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">139</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">140</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">141</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">142</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">143</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">144</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">145</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">146</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">147</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">148</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">149</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">150</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">151</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">152</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">153</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">154</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">155</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">156</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">157</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">158</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">159</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">160</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">161</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">162</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">163</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">164</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">165</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">166</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">167</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">168</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">169</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">170</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">171</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">172</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">173</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">174</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">175</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">176</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">177</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">178</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">179</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">180</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">181</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">182</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">183</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">184</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">185</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">186</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">187</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">188</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">189</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">190</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">191</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">192</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">193</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">194</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">195</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">196</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">197</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">198</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">199</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">200</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">201</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">202</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">203</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">204</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">205</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">206</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">207</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">208</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">209</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">210</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">211</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">212</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">213</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">214</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">215</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">216</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">217</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">218</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">219</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">220</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">221</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">222</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">223</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">224</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">225</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">226</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">227</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">228</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">229</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">230</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">231</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">232</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">233</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">234</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">235</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">236</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">237</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">238</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">239</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">240</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">241</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">242</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">243</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">244</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">245</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">246</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">247</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">248</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">249</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">250</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">251</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">252</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">253</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">254</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">255</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">256</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">257</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">258</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">259</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">260</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">261</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">262</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">263</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">264</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">265</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">266</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">267</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">268</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">269</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">270</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">271</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">272</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">273</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">274</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">275</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">276</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">277</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">278</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">279</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">280</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">281</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">282</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">283</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">284</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">285</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">286</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">287</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">288</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">289</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">290</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">291</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">292</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">293</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">294</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">295</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">296</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">297</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">298</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">299</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">300</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">301</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">302</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">303</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">304</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">305</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">306</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">307</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">308</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">309</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">310</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">311</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">312</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">313</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">314</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">315</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">316</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">317</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">318</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">319</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">320</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">321</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">322</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">323</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">324</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">325</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">326</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">327</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">328</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">329</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">330</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">331</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">332</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">333</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">334</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">335</span></pre></div></td><td class="code"><div><pre style="line-height: 125%;"><span></span><code><span style="color: #F8F8F2">diff --git a/Cargo.lock b/Cargo.lock</span>
+<span style="color: #F8F8F2">index c59528d..18acd8d 100644</span>
+<span style="color: #FF4689">--- a/Cargo.lock</span>
+<span style="color: #A6E22E">+++ b/Cargo.lock</span>
+<span style="color: #959077">@@ -92,9 +92,9 @@ checksum = &quot;ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;av1-grain&quot;
+<span style="color: #FF4689">-version = &quot;0.2.3&quot;</span>
+<span style="color: #A6E22E">+version = &quot;0.2.4&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;6678909d8c5d46a42abcf571271e15fdbc0a225e3646cf23762cd415046c78bf&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;4f3efb2ca85bc610acfa917b5aaa36f3fcbebed5b3182d7f877b02531c4b80c8&quot;</span>
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #F8F8F2"> </span> &quot;anyhow&quot;,
+<span style="color: #F8F8F2"> </span> &quot;arrayvec&quot;,
+<span style="color: #959077">@@ -127,9 +127,9 @@ checksum = &quot;bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;bitflags&quot;
+<span style="color: #FF4689">-version = &quot;2.9.0&quot;</span>
+<span style="color: #A6E22E">+version = &quot;2.9.1&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;5c8214115b7bf84099f1309324e63141d4c5d7cc26862f97a0a857dbefe165bd&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;1b8e56985ec62d17e9c1001dc89c88ecd7dc08e47eba5ec7c29c7b5eeecde967&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;bitstream-io&quot;
+<span style="color: #959077">@@ -157,9 +157,9 @@ checksum = &quot;64fa3c856b712db6612c019f14756e64e4bcea13337a6b33b696333a9eaa2d06&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;bytemuck&quot;
+<span style="color: #FF4689">-version = &quot;1.22.0&quot;</span>
+<span style="color: #A6E22E">+version = &quot;1.23.0&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;b6b1fc10dbac614ebc03540c9dbd60e83887fda27794998c6528f1782047d540&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;9134a6ef01ce4b366b50689c94f82c14bc72bc5d0386829828a2e2752ef7958c&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;byteorder&quot;
+<span style="color: #959077">@@ -175,9 +175,9 @@ checksum = &quot;8f1fe948ff07f4bd06c30984e69f5b4899c516a3ef74f34df92a2df2ab535495&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;cc&quot;
+<span style="color: #FF4689">-version = &quot;1.2.20&quot;</span>
+<span style="color: #A6E22E">+version = &quot;1.2.25&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;04da6a0d40b948dfc4fa8f5bbf402b0fc1a64a28dbf7d12ffd683550f2c1b63a&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;d0fc897dc1e865cc67c0e05a836d9d3f1df3cbe442aa4a9473b18e12624a4951&quot;</span>
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #F8F8F2"> </span> &quot;jobserver&quot;,
+<span style="color: #F8F8F2"> </span> &quot;libc&quot;,
+<span style="color: #959077">@@ -340,9 +340,9 @@ dependencies = [</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;getrandom&quot;
+<span style="color: #FF4689">-version = &quot;0.3.2&quot;</span>
+<span style="color: #A6E22E">+version = &quot;0.3.3&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;73fea8450eea4bac3940448fb7ae50d91f034f941199fcd9d909a5a07aa455f0&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;26145e563e54f2cadc477553f1ec5ee650b00862f0a58bcd12cbdc5f0ea2d2f4&quot;</span>
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #F8F8F2"> </span> &quot;cfg-if&quot;,
+<span style="color: #F8F8F2"> </span> &quot;libc&quot;,
+<span style="color: #959077">@@ -372,9 +372,9 @@ dependencies = [</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;hashbrown&quot;
+<span style="color: #FF4689">-version = &quot;0.15.2&quot;</span>
+<span style="color: #A6E22E">+version = &quot;0.15.3&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;bf151400ff0baff5465007dd2f3e717f3fe502074ca563069ce3a6629d07b289&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;84b26c544d002229e640969970a2e74021aadf6e2f96372b9c58eff97de08eb3&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;heck&quot;
+<span style="color: #959077">@@ -466,7 +466,7 @@ version = &quot;0.1.33&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #F8F8F2"> </span>checksum = &quot;38f262f097c174adebe41eb73d66ae9c06b2844fb0da69969647bbddd9b0538a&quot;
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #FF4689">- &quot;getrandom 0.3.2&quot;,</span>
+<span style="color: #A6E22E">+ &quot;getrandom 0.3.3&quot;,</span>
+<span style="color: #F8F8F2"> </span> &quot;libc&quot;,
+<span style="color: #F8F8F2"> </span>]
+
+<span style="color: #959077">@@ -888,7 +888,7 @@ version = &quot;0.9.3&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #F8F8F2"> </span>checksum = &quot;99d9a13982dcf210057a8a78572b2217b667c3beacbf3a0d8b454f6f82837d38&quot;
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #FF4689">- &quot;getrandom 0.3.2&quot;,</span>
+<span style="color: #A6E22E">+ &quot;getrandom 0.3.3&quot;,</span>
+<span style="color: #F8F8F2"> </span>]
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #959077">@@ -978,9 +978,9 @@ checksum = &quot;a157657054ffe556d8858504af8a672a054a6e0bd9e8ee531059100c0fa11bb2&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;rustversion&quot;
+<span style="color: #FF4689">-version = &quot;1.0.20&quot;</span>
+<span style="color: #A6E22E">+version = &quot;1.0.21&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;eded382c5f5f786b989652c49544c4877d9f015cc22e145a5ea8ea66c2921cd2&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;8a0d197bd2c9dc6e53b84da9556a69ba4cdfab8619eb41a8bd1cc2027a0f6b1d&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;serde&quot;
+<span style="color: #959077">@@ -1311,15 +1311,15 @@ dependencies = [</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;weezl&quot;
+<span style="color: #FF4689">-version = &quot;0.1.8&quot;</span>
+<span style="color: #A6E22E">+version = &quot;0.1.10&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;53a85b86a771b1c87058196170769dd264f66c0782acf1ae6cc51bfd64b39082&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;a751b3277700db47d3e574514de2eced5e54dc8a5436a3bf7a0b248b2cee16f3&quot;</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;winnow&quot;
+<span style="color: #FF4689">-version = &quot;0.7.7&quot;</span>
+<span style="color: #A6E22E">+version = &quot;0.7.10&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;6cb8234a863ea0e8cd7284fcdd4f145233eb00fee02bbdd9861aec44e6477bc5&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;c06928c8748d81b05c9be96aad92e1b6ff01833332f281e8cfca3be4b35fc9ec&quot;</span>
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #F8F8F2"> </span> &quot;memchr&quot;,
+<span style="color: #F8F8F2"> </span>]
+<span style="color: #959077">@@ -1330,7 +1330,7 @@ version = &quot;0.39.0&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #F8F8F2"> </span>checksum = &quot;6f42320e61fe2cfd34354ecb597f86f413484a798ba44a8ca1165c58d42da6c1&quot;
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #FF4689">- &quot;bitflags 2.9.0&quot;,</span>
+<span style="color: #A6E22E">+ &quot;bitflags 2.9.1&quot;,</span>
+<span style="color: #F8F8F2"> </span>]
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #959077">@@ -1370,9 +1370,9 @@ dependencies = [</span>
+
+<span style="color: #F8F8F2"> </span>[[package]]
+<span style="color: #F8F8F2"> </span>name = &quot;zune-jpeg&quot;
+<span style="color: #FF4689">-version = &quot;0.4.14&quot;</span>
+<span style="color: #A6E22E">+version = &quot;0.4.15&quot;</span>
+<span style="color: #F8F8F2"> </span>source = &quot;registry+https://github.com/rust-lang/crates.io-index&quot;
+<span style="color: #FF4689">-checksum = &quot;99a5bab8d7dedf81405c4bb1f2b83ea057643d9cb28778cea9eecddeedd2e028&quot;</span>
+<span style="color: #A6E22E">+checksum = &quot;b63fd466826ec8fe25e1fc010c169213fec4e135ac39caccdba830eaa3895923&quot;</span>
+<span style="color: #F8F8F2"> </span>dependencies = [
+<span style="color: #F8F8F2"> </span> &quot;zune-core&quot;,
+<span style="color: #F8F8F2"> </span>]
+<span style="color: #F8F8F2">diff --git a/Makefile b/Makefile</span>
+<span style="color: #F8F8F2">index 7542e79..1faa9af 100644</span>
+<span style="color: #FF4689">--- a/Makefile</span>
+<span style="color: #A6E22E">+++ b/Makefile</span>
+<span style="color: #959077">@@ -7,6 +7,7 @@ install: build</span>
+<span style="color: #F8F8F2"> </span>   sudo install -m755 target/release/walrs /usr/bin/walrs
+<span style="color: #F8F8F2"> </span>   sudo install -d ./templates/ /etc/walrs/templates
+<span style="color: #F8F8F2"> </span>   sudo cp -r templates/ /etc/walrs/
+<span style="color: #A6E22E">+   bash ./autocomplete.sh</span>
+<span style="color: #F8F8F2"> </span>   sudo cp -r colorschemes/ /etc/walrs/
+
+<span style="color: #F8F8F2"> </span>uninstall:
+<span style="color: #F8F8F2">diff --git a/autocomplete.sh b/autocomplete.sh</span>
+new file mode 100755
+<span style="color: #F8F8F2">index 0000000..8593116</span>
+<span style="color: #FF4689">--- /dev/null</span>
+<span style="color: #A6E22E">+++ b/autocomplete.sh</span>
+<span style="color: #959077">@@ -0,0 +1,170 @@</span>
+<span style="color: #A6E22E">+#!/bin/bash</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# walrs Auto-completion Installer</span>
+<span style="color: #A6E22E">+# Simple, single-file installer that detects shell using $SHELL</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+set -e</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# Colors</span>
+<span style="color: #A6E22E">+GREEN=&#39;\033[0;32m&#39;</span>
+<span style="color: #A6E22E">+RED=&#39;\033[0;31m&#39;</span>
+<span style="color: #A6E22E">+YELLOW=&#39;\033[1;33m&#39;</span>
+<span style="color: #A6E22E">+NC=&#39;\033[0m&#39;</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# Check if walrs exists</span>
+<span style="color: #A6E22E">+if ! command -v walrs &amp;&gt; /dev/null; then</span>
+<span style="color: #A6E22E">+    echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;:&lt;/mi&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{NC}&quot;</span>
+<span style="color: #A6E22E">+    exit 1</span>
+<span style="color: #A6E22E">+fi</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# Get shell from $SHELL variable</span>
+<span style="color: #A6E22E">+CURRENT_SHELL=&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;SHELL&quot;)</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# Create completion based on shell</span>
+<span style="color: #A6E22E">+case &quot;$CURRENT_SHELL&quot; in</span>
+<span style="color: #A6E22E">+    &quot;fish&quot;)</span>
+<span style="color: #A6E22E">+        echo &quot;Installing Fish completion...&quot;</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        # Create fish completions directory</span>
+<span style="color: #A6E22E">+        mkdir -p ~/.config/fish/completions</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        # Write fish completion file</span>
+<span style="color: #A6E22E">+        cat &gt; ~/.config/fish/completions/walrs.fish &lt;&lt; &#39;EOF&#39;</span>
+<span style="color: #A6E22E">+# walrs completion for fish shell</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# Clear existing completions</span>
+<span style="color: #A6E22E">+complete -c walrs -e</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# Basic flags</span>
+<span style="color: #A6E22E">+complete -c walrs -s i -l image -d &quot;path to image or wallpapers directory&quot; -r -F</span>
+<span style="color: #A6E22E">+complete -c walrs -s k -l backend -d &quot;change the colors backend&quot; -x -a &quot;kmeans color_thief palette_extract all backends&quot;</span>
+<span style="color: #A6E22E">+complete -c walrs -s r -l reload -d &quot;reload without changing the wallpaper&quot;</span>
+<span style="color: #A6E22E">+complete -c walrs -s R -l reload-no -d &quot;reload with changing the wallpaper&quot;  </span>
+<span style="color: #A6E22E">+complete -c walrs -s t -l theme -d &quot;use external theme file&quot; -r -F</span>
+<span style="color: #A6E22E">+complete -c walrs -s g -l generate -d &quot;generate theme in themes folder&quot; -x</span>
+<span style="color: #A6E22E">+complete -c walrs -s s -l saturation -d &quot;saturation value -128 to 127&quot; -x</span>
+<span style="color: #A6E22E">+complete -c walrs -s b -l brightness -d &quot;brightness value -128 to 127&quot; -x</span>
+<span style="color: #A6E22E">+complete -c walrs -s q -l quit -d &quot;set quit mode (no output)&quot;</span>
+<span style="color: #A6E22E">+complete -c walrs -s v -l version -d &quot;show version&quot;</span>
+<span style="color: #A6E22E">+complete -c walrs -l help -d &quot;display help&quot;</span>
+<span style="color: #A6E22E">+complete -c walrs -a help -d &quot;display help&quot;</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+# Saturation and brightness numeric completion</span>
+<span style="color: #A6E22E">+for i in (seq -128 127)</span>
+<span style="color: #A6E22E">+    complete -c walrs -s s -l saturation -x -a &quot;$i&quot;</span>
+<span style="color: #A6E22E">+    complete -c walrs -s b -l brightness -x -a &quot;$i&quot;</span>
+<span style="color: #A6E22E">+end</span>
+<span style="color: #A6E22E">+EOF</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;:&lt;/mi&gt;&lt;mtext&gt;&amp;#x000A0;&lt;/mtext&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{NC}&quot;</span>
+<span style="color: #A6E22E">+        ;;</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+    &quot;zsh&quot;)</span>
+<span style="color: #A6E22E">+        echo &quot;Installing Zsh completion...&quot;</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        # Create zsh completions directory</span>
+<span style="color: #A6E22E">+        mkdir -p ~/.zsh/completions</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        # Write zsh completion file</span>
+<span style="color: #A6E22E">+        cat &gt; ~/.zsh/completions/_walrs &lt;&lt; &#39;EOF&#39;</span>
+<span style="color: #A6E22E">+#compdef walrs</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+_walrs() {</span>
+<span style="color: #A6E22E">+    local context state line</span>
+<span style="color: #A6E22E">+    typeset -A opt_args</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+    _arguments \</span>
+<span style="color: #A6E22E">+        &#39;(-i --image)&#39;{-i,--image}&#39;[path to image or wallpapers directory]:image file:_files -g &quot;*.{jpg,jpeg,png,bmp,gif,tiff,webp}(-.)&quot;&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-k --backend)&#39;{-k,--backend}&#39;[change the colors backend]:backend:(kmeans color_thief palette_extract all backends)&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-r --reload)&#39;{-r,--reload}&#39;[reload without changing the wallpaper]&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-R --reload-no)&#39;{-R,--reload-no}&#39;[reload with changing the wallpaper]&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-t --theme)&#39;{-t,--theme}&#39;[use external theme file]:theme file:_files -g &quot;*.json(-.)&quot;&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-g --generate)&#39;{-g,--generate}&#39;[generate theme in themes folder]:theme name:&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-s --saturation)&#39;{-s,--saturation}&#39;[specify the saturation value -128 =&gt; 127]:saturation:({-128..127})&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-b --brightness)&#39;{-b,--brightness}&#39;[specify the brightness value -128 =&gt; 127]:brightness:({-128..127})&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-q --quit)&#39;{-q,--quit}&#39;[set quit mode (no output)]&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(-v --version)&#39;{-v,--version}&#39;[version]&#39; \</span>
+<span style="color: #A6E22E">+        &#39;(--help)--help[display usage information]&#39;</span>
+<span style="color: #A6E22E">+}</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+_walrs &quot;$@&quot;</span>
+<span style="color: #A6E22E">+EOF</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        # Add to fpath in .zshrc if not already there</span>
+<span style="color: #A6E22E">+        if ! grep -q &quot;fpath=(.*\.zsh/completions&quot; ~/.zshrc 2&gt;/dev/null; then</span>
+<span style="color: #A6E22E">+            echo &#39;fpath=(~/.zsh/completions $fpath)&#39; &gt;&gt; ~/.zshrc</span>
+<span style="color: #A6E22E">+            echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mtext&gt;&amp;#x000A0;&lt;/mtext&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mtext&gt;&amp;#x000A0;&lt;/mtext&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{NC}&quot;</span>
+<span style="color: #A6E22E">+        fi</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;Z&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;:&lt;/mi&gt;&lt;mtext&gt;&amp;#x000A0;&lt;/mtext&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;msub&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{NC}&quot;</span>
+<span style="color: #A6E22E">+        echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;Y&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;:&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt;&amp;#x000A0;&lt;/mtext&gt;&lt;mo&gt;&amp;#x0002F;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;&amp;&lt;/mi&gt;&lt;mi&gt;&amp;&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{NC}&quot;</span>
+<span style="color: #A6E22E">+        ;;</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+    &quot;bash&quot;)</span>
+<span style="color: #A6E22E">+        echo &quot;Installing Bash completion...&quot;</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        # Try different locations for bash completion</span>
+<span style="color: #A6E22E">+        if [ -d &quot;/usr/share/bash-completion/completions&quot; ] &amp;&amp; [ -w &quot;/usr/share/bash-completion/completions&quot; ]; then</span>
+<span style="color: #A6E22E">+            COMPLETION_DIR=&quot;/usr/share/bash-completion/completions&quot;</span>
+<span style="color: #A6E22E">+        elif [ -d &quot;/etc/bash_completion.d&quot; ] &amp;&amp; [ -w &quot;/etc/bash_completion.d&quot; ]; then</span>
+<span style="color: #A6E22E">+            COMPLETION_DIR=&quot;/etc/bash_completion.d&quot;</span>
+<span style="color: #A6E22E">+        else</span>
+<span style="color: #A6E22E">+            # Use user directory</span>
+<span style="color: #A6E22E">+            COMPLETION_DIR=&quot;$HOME/.local/share/bash-completion/completions&quot;</span>
+<span style="color: #A6E22E">+            mkdir -p &quot;$COMPLETION_DIR&quot;</span>
+<span style="color: #A6E22E">+        fi</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+        # Write bash completion file</span>
+<span style="color: #A6E22E">+        cat &gt; &quot;$COMPLETION_DIR/walrs&quot; &lt;&lt; &#39;EOF&#39;</span>
+<span style="color: #A6E22E">+_walrs_completion() {</span>
+<span style="color: #A6E22E">+    shopt -s extglob</span>
+<span style="color: #A6E22E">+    local cur prev opts</span>
+<span style="color: #A6E22E">+    COMPREPLY=()</span>
+<span style="color: #A6E22E">+    cur=&quot;${COMP_WORDS[COMP_CWORD]}&quot;</span>
+<span style="color: #A6E22E">+    prev=&quot;${COMP_WORDS[COMP_CWORD-1]}&quot;</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+    opts=&quot;-i --image -k --backend -r --reload -R --reload-no -t --theme -g --generate -s --saturation -b --brightness -q --quit -v --version --help help&quot;</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+    case ${prev} in</span>
+<span style="color: #A6E22E">+        -i|--image)</span>
+<span style="color: #A6E22E">+            COMPREPLY=( &lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mi&gt;&amp;#x02032;&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x00021;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002A;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;@&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x0007C;&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x0007C;&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x0007C;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x0007C;&lt;/mo&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x0007C;&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x0007C;&lt;/mo&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00029;&lt;/mo&gt;&lt;mi&gt;&amp;#x02032;&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{cur}&quot;) )</span>
+<span style="color: #A6E22E">+            COMPREPLY+=( &lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{cur}&quot;) )</span>
+<span style="color: #A6E22E">+            return 0</span>
+<span style="color: #A6E22E">+            ;;</span>
+<span style="color: #A6E22E">+        -k|--backend)</span>
+<span style="color: #A6E22E">+            COMPREPLY=( &lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{cur}&quot;) )</span>
+<span style="color: #A6E22E">+            return 0</span>
+<span style="color: #A6E22E">+            ;;</span>
+<span style="color: #A6E22E">+        -t|--theme)</span>
+<span style="color: #A6E22E">+            COMPREPLY=( &lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mi&gt;&amp;#x02032;&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x00021;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002A;&lt;/mo&gt;&lt;mo&gt;&amp;#x0002E;&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;&amp;#x02032;&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{cur}&quot;) )</span>
+<span style="color: #A6E22E">+            return 0</span>
+<span style="color: #A6E22E">+            ;;</span>
+<span style="color: #A6E22E">+        -g|--generate)</span>
+<span style="color: #A6E22E">+            COMPREPLY=( &lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{cur}&quot;) )</span>
+<span style="color: #A6E22E">+            return 0</span>
+<span style="color: #A6E22E">+            ;;</span>
+<span style="color: #A6E22E">+        -s|--saturation|-b|--brightness)</span>
+<span style="color: #A6E22E">+            COMPREPLY=( &lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;(seq -128 127)&quot; -- &quot;${cur}&quot;) )</span>
+<span style="color: #A6E22E">+            return 0</span>
+<span style="color: #A6E22E">+            ;;</span>
+<span style="color: #A6E22E">+    esac</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+    COMPREPLY=( &lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x00028;&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x02212;&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mi&gt;&quot;&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{opts}&quot; -- &quot;${cur}&quot;) )</span>
+<span style="color: #A6E22E">+    return 0</span>
+<span style="color: #A6E22E">+}</span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+complete -F _walrs_completion walrs</span>
+<span style="color: #A6E22E">+EOF</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+</span>
+<span style="color: #A6E22E">+        echo &quot;source ~/.local/share/bash-completion/completions/walrs&quot; &gt;&gt; ~/.bashrc</span>
+<span style="color: #A6E22E">+        echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;G&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;:&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;COMPLETION_DIR/walrs${NC}&quot;</span>
+<span style="color: #A6E22E">+        ;;</span>
+<span style="color: #A6E22E">+        </span>
+<span style="color: #A6E22E">+    *)</span>
+<span style="color: #A6E22E">+        echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;:&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;CURRENT_SHELL${NC}&quot;</span>
+<span style="color: #A6E22E">+        echo -e &quot;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;inline&quot;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;mi&gt;Y&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;:&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;&amp;#x0002C;&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo&gt;&amp;#x0002C;&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;/mrow&gt;&lt;/math&gt;{NC}&quot;</span>
+<span style="color: #A6E22E">+        exit 1</span>
+<span style="color: #A6E22E">+        ;;</span>
+<span style="color: #A6E22E">+esac</span>
+</code></pre></div></td></tr></table></div>
+
+
+			</main>
+
+			<footer class="mt-auto mb-2 h-10  flex flex-col justify-center items-center text-blockquote text-sm border-[#333]">
+				
+					<div>
+						<p class="text-gray-300">// Created by <span class="font-bold text-green-500">Pi66</span></p>
+						<p class="text-gray-300">// Copyright ©Pi66 2026</p>
+					</div>
+				
+			</footer>
+
+		</div>
+	</body>
+	<script>
+        function typePerLetter(selector, speed = 100) {
+            const el = document.querySelector(selector);
+            if (!el) return;
+
+            const text = el.textContent;
+            el.textContent = "";
+            let i = 0;
+
+            const interval = setInterval(() => {
+                if (i >= text.length) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const char = text[i];
+                if (char === "\n") {
+                    el.appendChild(document.createElement("br"));
+                } else {
+                    el.append(char);
+                }
+                i++;
+            }, speed);
+        }
+
+        typePerLetter(".pi66-title", 120);
+		 document.body.style.zoom = "100%";
+    </script>
+</html>
