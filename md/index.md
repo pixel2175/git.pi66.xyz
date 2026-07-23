@@ -14,12 +14,12 @@
 </thead>
 <tbody>
 
-{% for repo in repos %}
+{% for repo in storage.get("repos") %}
 <tr>
     <td> <a href="/{{repo.name|lower}}/log.html"><strong>{{ repo.name }}</strong></a> </td>
     <td class="!text-gray-400"> {{ repo.desc }}</td>
     <td class="!text-gray-400"> {{ repo.author }}</td>
-    <td class="!text-gray-400"> {{ repo.last_commit_date }}</td>
+    <td class="!text-gray-400 time-ago"> {{ repo.last_commit_date }}</td>
 </tr>
 
 {% endfor%}

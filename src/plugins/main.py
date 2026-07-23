@@ -1,6 +1,4 @@
 import os
-import re
-import subprocess
 from git import load_repos
 from log_builder import create_log_pages
 from file_builder import create_file_pages
@@ -8,52 +6,27 @@ from ref_builder import create_ref_pages
 from readme_builder import create_readme_pages
 from license_builder import create_license_pages
 
-GIT_DIR = "/srv/git/"
+storage = api.globals
 
-if api.mode == "draft":
-    GIT_DIR = "/home/pixel/docs/projects/coding/websites/cache/git.pi66.xyz/tmp"
-
-
-repos = []
+storage.set("git_dirs",{
+    "release":"/srv/git/",
+    "draft":"/home/pixel/docs/projects/coding/websites/cache/git.pi66.xyz/tmp"}
+)
+GIT_DIR = storage.get("git_dirs")[api.mode]
 
 def ensure_repos():
-    global repos
-    if not repos:
-        repos.extend(load_repos(
-            api,
-            os.path.expanduser(GIT_DIR)
-        ))
+    return load_repos(
+        api,
+        os.path.expanduser(GIT_DIR)
+    )
 
 @hook("on_build_start")
-def load_repos_hook(_):
-    ensure_repos()
-
-@hook("on_page_read")
-def inject_repos(md_file, md_content):
-    if "index.md" not in md_file:
-        return
-    ensure_repos()
-    rows = []
-    for repo in repos:
-        rows.append(
-            f'<tr>\n'
-            f'    <td> <a href="/{repo.name.lower()}/log.html"><strong>{repo.name}</strong></a> </td>\n'
-            f'    <td class="!text-gray-400"> {repo.desc}</td>\n'
-            f'    <td class="!text-gray-400"> {repo.author}</td>\n'
-            f'    <td class="!text-gray-400 time-ago"> {repo.last_commit_date}</td>\n'
-            f'</tr>'
-        )
-    table = "\n\n".join(rows)
-    return re.sub(
-        r"\{%\s*for repo in repos\s*%\}.*?\{%\s*endfor\s*%\}",
-        table,
-        md_content,
-        flags=re.DOTALL,
-    )
+def on_start_(_):
+    storage.set("repos", ensure_repos())
 
 @hook("on_build_end")
 def build_pages(_):
-    global repos
+    repos = storage.get("repos")
     ensure_repos()
     create_log_pages(api, repos)
     create_file_pages(api, repos, os.path.expanduser(GIT_DIR))
