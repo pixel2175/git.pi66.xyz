@@ -40,7 +40,7 @@ def inject_repos(md_file, md_content):
             f'    <td> <a href="/{repo.name.lower()}/log.html"><strong>{repo.name}</strong></a> </td>\n'
             f'    <td class="!text-gray-400"> {repo.desc}</td>\n'
             f'    <td class="!text-gray-400"> {repo.author}</td>\n'
-            f'    <td class="!text-gray-400"> {repo.last_commit_date}</td>\n'
+            f'    <td class="!text-gray-400 time-ago"> {repo.last_commit_date}</td>\n'
             f'</tr>'
         )
     table = "\n\n".join(rows)
