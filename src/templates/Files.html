@@ -3,29 +3,31 @@
 
 <table class="!w-full">
 	<thead>
-		<tr><th>Mode</th><th>Size</th><th>Path</th>
+		<tr>
+			<th class="w-px whitespace-nowrap">Mode</th>
+			<th class="w-px whitespace-nowrap">Size</th>
+			<th class="w-full">Path</th>
+		</tr>
 	</thead>
-		<tbody>
-
-		{% for file in files %}
-
-			<tr>
-				<td class="!text-gray-500 font-mono text-xs">
-					{{file.mode}}
-				</td>
-				<td class="!text-gray-400 text-right">
-					{{file.size}}
-				</td>
-				<td>
-					<a class="!text-green-400 hover:underline"
-					   href="/{{repo_name|lower}}/files/{{file.path}}.html" 
-					>
-						{{file.path}}
-					</a>
-				</td>
-			</tr>
-		{% endfor %}
-		</tbody>
+	<tbody>
+	{% for file in files %}
+		<tr>
+			<td class="w-px whitespace-nowrap !text-gray-500 font-mono text-xs">
+				{{file.mode}}
+			</td>
+			<td class="w-px whitespace-nowrap !text-gray-400 text-right">
+				{{file.size}}
+			</td>
+			<td class="w-full">
+				<a class="!text-green-400 hover:underline"
+				   href="/{{repo_name|lower}}/files/{{file.path}}.html"
+				>
+					{{file.path}}
+				</a>
+			</td>
+		</tr>
+	{% endfor %}
+	</tbody>
 </table>
 
 {% endset %}
