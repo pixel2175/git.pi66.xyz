@@ -14,13 +14,21 @@
 
 </blockquote>
 
-<table class="diffstat ![direction:ltr] !w-full !table-fixed !border-0 px-6">
+<strong class="!pb-3 text-[80%] md:text-base"> Diffstat: </strong>
+
+
+<table class="diffstat ![direction:ltr] !w-full !border-0 px-6">
 	<tbody>
 {% for b in bars %}
 		<tr>
-			<td class="!text-gray-400 flex items-center gap-2.5"><p class="flex gap-2.5"><strong>{{b.file.status}}</strong></p>  {{b.file.name}}</td>
-			<td class="!text-right !text-gray-400">{{b.total}}</td>
-			<td>
+			<td class="!text-gray-400 w-full">
+				<div class="flex items-center gap-2.5">
+					<p class="flex gap-2.5"><strong>{{b.file.status}}</strong></p>
+					<span>{{b.file.name}}</span>
+				</div>
+			</td>
+			<td class="!text-right !text-gray-400 w-px whitespace-nowrap">{{b.total}}</td>
+			<td class="w-px whitespace-nowrap">
 				<span class="!text-green-500">{{ "+" * b.add_width }}</span><span class="!text-red-500">{{ "-" * b.del_width }}</span>
 			</td>
 		</tr>
