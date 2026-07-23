@@ -28,7 +28,10 @@
 	--color-strong: #eed;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+	scroll-behavior: smooth; 
+	font-size: 82.5%;
+}
 
 body {
 	color: var(--color-text);
