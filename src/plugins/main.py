@@ -1,4 +1,4 @@
-import os
+import subprocess, os
 from git import load_repos
 from log_builder import create_log_pages
 from file_builder import create_file_pages
@@ -19,6 +19,20 @@ def ensure_repos():
         api,
         os.path.expanduser(GIT_DIR)
     )
+
+@hook("on_end")
+def sync_static():
+    if api.mode == "release":
+        try:
+            subprocess.run([
+                "rsync", "-a",
+                api.config.tree.static + "/",
+                os.path.join(os.path.dirname(api.config.tree.release_dest), "static")
+            ])
+            api.log.info("Static files synced successfully.")
+        except Exception as e:
+            api.log.die(f"Failed to sync static files: {e}")
+
 
 @hook("on_build_start")
 def on_start_(_):
