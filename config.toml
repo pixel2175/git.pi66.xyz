@@ -8,4 +8,4 @@
   templates    = "src/templates"
   plugins      = "src/plugins"
   draft_dest   = "draft"
-  release_dest = "release"
+  release_dest = "/srv/www/git.pi66.xyz/public/html"
