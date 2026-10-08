@@ -10,10 +10,20 @@ merodi.enable.HeaderAttr()
 merodi.enable.BlockAttr()
 merodi.enable.InlineAttr()
 
+local tree = merodi.config.tree
 local release = merodi.build.mode() == "release"
-local root = os.getenv("REPOS") or (release and "/srv/git" or "/home/pixel/repos")
-local dest = release and merodi.config.tree.release_dest or merodi.config.tree.draft_dest
-local templates = merodi.config.tree.templates
+local dest = release and tree.release_dest or tree.draft_dest
+local templates = tree.templates
+local roots = os.getenv("REPOS") and { os.getenv("REPOS") }
+	or { release and "/srv/git" or "/home/pixel/repos" }
+
+local pages = {
+	{ "index.html",         "repo.md"    },
+	{ "files/index.html",   "files.md"   },
+	{ "commits/index.html", "commits.md" },
+	{ "refs/index.html",    "refs.md"    },
+	{ "license/index.html", "license.md" },
+}
 
 local function render(template, out)
 	local html = merodi.compile.convert(fs.read(templates .. "/" .. template))
@@ -21,53 +31,54 @@ local function render(template, out)
 	fs.write(out, html)
 end
 
+local function status(msg)
+	io.write("\27[1A\27[2K\r")
+	merodi.log.info("Git: " .. msg .. "\r")
+end
+
 local repos = {}
 
-for _, name in ipairs(fs.listdir(root)) do
-	local repo = git.load(root .. "/" .. name)
+for _, root in ipairs(roots) do
+	local found = 0
 
-	if repo then
-		merodi.log.info("Git: loading " .. helper.cyan(repo.name))
-		repos[#repos + 1] = repo
+	for _, name in ipairs(fs.listdir(root) or {}) do
+		local repo = git.load(root .. "/" .. name)
+
+		if repo then
+			merodi.log.info("Git: loading " .. helper.cyan(repo.name))
+			repos[#repos + 1] = repo
+			found = found + 1
+		end
+	end
+
+	if found == 0 then
+		merodi.log.info("Git: no repos loaded from " .. helper.cyan(root))
 	end
 end
 
 merodi.jinja.set("repos", repos)
 
-local pages = {
-	["index.html"]         = "repo.md",
-	["files/index.html"]   = "files.md",
-	["commits/index.html"] = "commits.md",
-	["refs/index.html"]    = "refs.md",
-	["license/index.html"] = "license.md",
-}
-
 print()
 for _, repo in ipairs(repos) do
 	local out = dest .. "/" .. repo.slug
+	local total = #repo.commits
 
 	fs.remove_all(out)
-
-	merodi.log.info("Git: Processing " .. helper.cyan( repo.name ))
-	merodi.log.info("Git: Moving: " .. helper.gray("raw files")  .. "\r" )
-	git.export(repo, out .. "/raw")
-
 	merodi.jinja.set("repo", repo)
 
-	io.write("\27[1A\27[2K\r")
-	merodi.log.info("Git: writing " .. helper.gray("pages")  .. "\r" )
+	merodi.log.info("Git: Processing " .. helper.cyan(repo.name))
+	merodi.log.info("Git: Moving: " .. helper.gray("raw files") .. "\r")
+	git.export(repo, out .. "/raw")
 
-	for page, template in pairs(pages) do
-		io.write("\27[1A\27[2K\r")
-		merodi.log.info("Git: writing " .. helper.gray(string.sub(template, 1, -4)) .. "\r" )
-		render(template, out .. "/" .. page)
+	status("writing " .. helper.gray("pages"))
+	for _, p in ipairs(pages) do
+		status("writing " .. helper.gray(p[2]:sub(1, -4)))
+		render(p[2], out .. "/" .. p[1])
 	end
 
-	io.write("\27[1A\27[2K\r")
-	merodi.log.info("Git: writing ".. helper.gray("commit pages"))
-
+	status("writing " .. helper.gray("commit pages"))
 	for idx, commit in ipairs(repo.commits) do
-		io.write("[" .. idx .. "/" .. #repo.commits .. "]- " .. helper.gray(commit.short).."\r")
+		io.write("[" .. idx .. "/" .. total .. "]- " .. helper.gray(commit.short) .. "\r")
 		merodi.jinja.set("commit", git.show(repo, commit))
 		render("commit.md", out .. "/commit/" .. commit.short .. "/index.html")
 	end
