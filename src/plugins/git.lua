@@ -242,8 +242,11 @@ end
 
 function M.show(repo, commit)
 	local out = run(repo.path, "show -m --first-parent --stat=100 --patch --format= " .. commit.hash)
-	local stat, patch = out:match("^(.-)\n(diff %-%-git.*)$")
-	if not stat then
+	local pos = out:find("\ndiff --git", 1, true)
+	local stat, patch
+	if pos then
+		stat, patch = out:sub(1, pos - 1), out:sub(pos + 1)
+	else
 		stat, patch = out, ""
 	end
 
