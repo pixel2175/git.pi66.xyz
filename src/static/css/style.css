@@ -239,7 +239,7 @@ ul li {
 }
 
 ul li::before {
-	content: "▸";
+	content: "\25B8";
 	position: absolute;
 	left: 0;
 	color: var(--color-heading-h3);
@@ -402,7 +402,7 @@ main table:has(tr > :nth-child(4)) :is(th, td):nth-child(n + 3) { text-align: ri
 	font-weight: bold;
 }
 
-.table-wrapper td::before { content: "▸ "; }
+.table-wrapper td::before { content: "\25B8\00a0"; }
 
 @media (max-width: 768px) {
 	html {font-size: 80%;}
