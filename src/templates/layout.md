@@ -31,15 +31,16 @@
 </main>
 </div>
 
-<nav>
-
-[Home](/) | [Repos](https://git.pi66.xyz) | [About](/about) | [Blog](https://blog.pi66.xyz) | [Gaza](/gaza)
-
-</nav>
-
 <center>
 
 // Created by **Pi66**
 
 // Copyright ©Pi66 2026
 </center>
+<br>
+
+<nav>
+
+[Home](https://pi66.xyz) | [Repos](https://git.pi66.xyz) | [About](https://pi66.xyz/about) | [Blog](https://blog.pi66.xyz) | [Gaza](https://pi66.xyz/gaza)
+
+</nav>
