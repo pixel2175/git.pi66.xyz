@@ -1,26 +1,11 @@
 [project]
-name        = "git.pi66.xyz"
-version     = "0.1.0"
-description = "A web interface for the pi66.xyz Git server"
+  name = "git.pi66.xyz"
+  version = "0.1.0"
+  description = "A web interface for the pi66.xyt Git server"
 
 [tree]
-markdown  = "md"
-static    = "src/static"
-templates = "src/templates"
-plugins   = "src/plugins"
-
-draft_dest    = "draft"
-release_dest  = "/srv/www/git.pi66.xyz/public/html"
-
-[webview]
-host        = "localhost"
-port        = 8000
-dev_tools   = false
-html_path   = "/"
-static_path = "/static"
-
-[extras]
-highlight = "monokai"
-
-[cache]
-hash = ".hash.cache"
+  markdown     = "md"
+  templates    = "src/templates"
+  plugins      = "src/plugins"
+  draft_dest   = "draft"
+  release_dest = "release"

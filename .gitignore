@@ -1,5 +1,1 @@
 draft/
-.hash.cache
-**/__pycache__/
-config.toml
-build/plugins/main.py

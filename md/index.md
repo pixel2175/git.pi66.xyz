@@ -1,32 +1,14 @@
-{% set page_title = "Pixel - Git" %}
+{% set title = "Pixel - Home" %}
 {% set page_content %}
 
-#  **Repositories** [.!text-center .!text-2xl]
+# **Repositoriess** {class="!text-center !text-3xl"}
 
-<table markdown=1 class="!mb-1">
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Owner</th>
-<th>Last commit</th>
-</tr>
-</thead>
-<tbody>
-
-{% for repo in storage.get("repos") %}
-<tr>
-    <td> <a href="/{{repo.name|lower}}/log.html"><strong>{{ repo.name }}</strong></a> </td>
-    <td class="!text-gray-400"> {{ repo.desc }}</td>
-    <td class="!text-gray-400"> {{ repo.author }}</td>
-    <td class="!text-gray-400 time-ago"> {{ repo.last_commit_date }}</td>
-</tr>
-
-{% endfor%}
-
-</tbody>
-</table>
+| Repository | Description | Author | Date |
+|---|---|---|---|
+{% for repo in repos -%}
+| [**{{ repo.name }}**](/{{ repo.name|lower }}/) | {{ repo.description }} | {{ repo.commits[0].author }} | {{ repo.commits[0].date }} |
+{% endfor %}
 
 {% endset %}
 
-{% include "base.html" %}
+{% include "layout.md" %}
