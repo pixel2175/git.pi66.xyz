@@ -64,6 +64,7 @@ main {
 	overflow-x: hidden;
 }
 
+main table, main th, main td { border: 0 !important; }
 header, nav, center { flex: 0 0 auto; }
 
 header {
