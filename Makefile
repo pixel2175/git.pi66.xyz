@@ -2,6 +2,10 @@
 
 all: build
 
+install:
+	@printf "\033[1;34m==>\033[0m Installing...\n"
+	@merodi build --release
+
 build:
 	@printf "\033[1;34m==>\033[0m Building...\n"
 	@merodi build
