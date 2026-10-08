@@ -1,7 +1,12 @@
 {% set title = "Pixel - " ~ repo.name ~ " refs" %}
-{% set page_content %}
+{% set before_main %}
 
 {% include "repo-nav.md" %}
+
+{% endset  %}
+
+{% set page_content %}
+
 
 ### Branches
 
