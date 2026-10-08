@@ -1,4 +1,4 @@
-# pi66.xyz
+# git.pi66.xyz
 
 Static Git server website located at [git.pi66.xyz](https://git.pi66.xyz).
 The website is built with [Merodi](https://github.com/pixel2175/merodi).
