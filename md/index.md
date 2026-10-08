@@ -6,7 +6,7 @@
 | Repository | Description | Author | Date |
 |---|---|---|---|
 {% for repo in repos -%}
-| [**{{ repo.name }}**](/{{ repo.name|lower }}/) | {{ repo.description }} | {{ repo.commits[0].author }} | {{ repo.commits[0].date }} |
+| [**{{ repo.name }}**](/{{ repo.name|lower }}/) | {{ repo.description }} | {{ repo.commits[0].author }} | [{{ repo.commits[0].date }}]{class="time-ago"} |
 {% endfor %}
 
 {% endset %}
