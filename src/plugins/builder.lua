@@ -19,26 +19,53 @@ local function write_pages(out)
 	end
 end
 
-local function write_commits(repo, out)
+local function missing_commits(repo, out)
+	local done = {}
+	for _, name in ipairs(fs.listdir(out .. "/commit") or {}) do
+		done[name] = true
+	end
+
+	local missing = {}
+	for _, commit in ipairs(repo.commits) do
+		if not done[commit.short] then
+			missing[#missing + 1] = commit
+		end
+	end
+	return missing
+end
+
+local function write_commits(repo, out, commits)
+	if #commits == 0 then
+		return
+	end
+
 	ui.status("writing " .. ui.gray("commit pages"))
-	local total = #repo.commits
-	for i, commit in ipairs(repo.commits) do
+	local total = #commits
+	for i, commit in ipairs(commits) do
 		ui.progress(i, total, commit.short)
 		merodi.jinja.set("commit", git.show(repo, commit))
 		render.page("commit.md", out .. "/commit/" .. commit.short .. "/index.html")
 	end
 end
 
-function M.repo(repo)
+function M.repo(repo, incremental)
 	local out = config.dest .. "/" .. repo.slug
+	local commits = repo.commits
 
 	ui.info("Processing " .. ui.cyan(repo.name))
-	fs.remove_all(out)
+
+	if incremental then
+		fs.remove_all(out .. "/raw")
+		commits = missing_commits(repo, out)
+	else
+		fs.remove_all(out)
+	end
+
 	merodi.jinja.set("repo", repo)
 
 	export_raw(repo, out)
 	write_pages(out)
-	write_commits(repo, out)
+	write_commits(repo, out, commits)
 end
 
 function M.all()
@@ -61,7 +88,7 @@ function M.one(name)
 
 	merodi.jinja.set("repos", { repo })
 	print()
-	M.repo(repo)
+	M.repo(repo, true)
 	return true
 end
 return M
