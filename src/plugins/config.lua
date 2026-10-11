@@ -5,8 +5,7 @@ return {
 	release = release,
 	dest = release and tree.release_dest or tree.draft_dest,
 	templates = tree.templates,
-	roots = os.getenv("REPOS") and { os.getenv("REPOS") }
-		or { release and "/srv/git" or "/home/pixel/repos" },
+	roots = { os.getenv("GIT_REPOS") },
 	pages = {
 		{ "index.html",         "repo.md"    },
 		{ "files/index.html",   "files.md"   },
