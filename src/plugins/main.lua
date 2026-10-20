@@ -4,9 +4,7 @@ require("watch")
 require("hooks")
 
 merodi.enable.GFM()
-merodi.enable.HeaderAttr()
-merodi.enable.BlockAttr()
-merodi.enable.InlineAttr()
+merodi.enable.HTMLAttr()
 
 local action = merodi.action()
 

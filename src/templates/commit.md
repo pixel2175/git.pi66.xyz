@@ -42,17 +42,17 @@
 {% if commit.patch_rest != "" %}
 <details class="group">
 <summary class="cursor-pointer list-none">
-<pre class="group-open:hidden overflow-x-auto text-xs m-0">{{ commit.patch_head|safe }}
+<pre class="group-open:hidden overflow-x-auto text-xs m-0"><code>{{ commit.patch_head|safe }}</code>
 ...
 </pre>
 <span class="group-open:hidden text-lg">Show all</span>
 <span class="hidden group-open:inline text-lg">Show less</span>
 </summary>
-<pre class="overflow-x-auto text-xs m-0">{{ commit.patch|safe }}
+<pre class="overflow-x-auto text-xs m-0"><code>{{ commit.patch|safe }}</code>
 </pre>
 </details>
 {% else %}
-<pre class="overflow-x-auto text-xs m-0">{{ commit.patch|safe }}</pre>
+<pre class="overflow-x-auto text-xs m-0"><code>{{ commit.patch|safe }}</code></pre>
 {% endif %}
 {% endset %}
 
